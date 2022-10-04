@@ -1,7 +1,7 @@
-.div-cart{
+.div-cart {
     background-color: rgb(105, 105, 105, 0.8);
     border-radius: 15px;
-    padding: 10px;
+    /* padding: 10px; */
     color: white;
     text-align: center;
     width: 20%;
@@ -9,7 +9,7 @@
     height: fit-content;
 }
 
-.div-title{
+.div-title {
     width: 80%;
     padding: 20px;
     color: white;
@@ -17,7 +17,7 @@
     font-weight: bold;
 }
 
-.container{
+.container {
     background-color: orangered;
     /* background-image: url(../../img/fondo.jpg); */
     padding: 15px;
@@ -25,12 +25,12 @@
     max-width: 100% !important;
 }
 
-.svg{
+.svg {
     /* background-color: blue; */
     background-image: url(../../img/fondo.jpg);
 }
 
-.div-somos{
+.div-somos {
     background-color: rgb(58, 58, 58, 0.8);
     color: white;
     text-align: center;
@@ -41,8 +41,39 @@
     padding: 15px;
 }
 
-.container-somos{
+.container-somos {
     display: flex;
     justify-content: center;
     position: relative;
+}
+
+.btn-not {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    /* for button */
+    -webkit-appearance: button;
+    /* for input */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* width: ; */
+    padding: 15px;
+}
+
+
+@media (max-width: 550px) {
+    .div-title {
+        font-size: 1em;
+        width: 70%;
+    }
+
+    .div-cart {
+        width: 30%;
+    }
 }

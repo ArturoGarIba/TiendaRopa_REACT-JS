@@ -9,11 +9,15 @@ function Cart(props) {
                 <div className={styles['div-title']}>
                     REACT PEDIDOS
                 </div>
+
                 <div className={styles['div-cart']}>
-                    <i className="bi bi-cart"></i>
-                    Carrito
-                    <span className="badge bg-danger">{props.cantidad}</span>
+                    <button className={styles['btn-not']}>
+                        <i className="bi bi-cart"></i>
+                        Carrito
+                        <span className="badge bg-danger">{props.cantidad}</span>
+                    </button>
                 </div>
+
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className={cx(styles['svg'])}>
@@ -23,9 +27,9 @@ function Cart(props) {
             </div>
             <div className={styles['container-somos']}>
                 <div className={styles['div-somos']}>
-                    
-                        <h2>Deliciosa Comida en tu Casa !!</h2>
-                    
+
+                    <h2>Deliciosa Comida en tu Casa !!</h2>
+
                     <p>
                         Escoge tu platillo preferido de nuestra amplia seleccion de comidas y disfruta de un delicioso almuerzo o cema en casa
                     </p>
@@ -35,7 +39,7 @@ function Cart(props) {
                 </div>
             </div>
 
-            
+
 
         </>
     );
