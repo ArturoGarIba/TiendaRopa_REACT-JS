@@ -64,16 +64,20 @@ function App() {
   ];
   let [cantidad, setCantidad] = useState(0);
   const agregarCarrito = (event) => {
-      setCantidad((prevState) => cantidad+= parseInt(event))
-      // console.log(event);
+    setCantidad((prevState) => cantidad += parseInt(event))
+    // console.log(event);
   }
+
+  
 
   return (
     <>
-      <Cart cantidad={cantidad}/>
+      
+      <Cart cantidad={cantidad} />
       <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['row-cols-1'], globalStyles['row-cols-md-3'], globalStyles['text-center'])}>
         <Pedidos items={expenses} agregarCarrito={agregarCarrito} />
       </div>
+
     </>
   );
 }

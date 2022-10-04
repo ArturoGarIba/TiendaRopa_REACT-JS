@@ -1,4 +1,4 @@
-import styles from './Pedidos.module.css'
+// import styles from './Pedidos.module.css'
 import Card from '../UI/Card';
 import PedidosItem from './PedidosItem'
 import cx from 'classnames';
@@ -12,8 +12,8 @@ function Pedidos(props) {
     return (
     
             props.items.map((expense) => (
-                <div className={cx(globalStyles.div, globalStyles['col-lg-3'], globalStyles['col-sm-6'], styles['expenses'])}>
-                    <Card >
+                <div className={cx(globalStyles.div, globalStyles['col-lg-3'], globalStyles['col-sm-6'], globalStyles['mb-3'])}>
+                    <Card className={cx()}>
                         <PedidosItem
                             key={expense.id}
                             url_img={expense.url_img}

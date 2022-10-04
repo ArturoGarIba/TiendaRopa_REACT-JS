@@ -1,0 +1,24 @@
+.msj-error{
+    background-color: #C0392B;
+  }
+
+.msj-success{
+    background-color: #86d3a6;
+}
+
+.btn-add{
+    background-color: #229954;
+    color: white;
+    border: 3px solid #229954 !important;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+.btn-add:hover{
+    background-color: white !important;
+    color: #229954 !important;
+}
+
+.btn-add:active{
+    border: 1px solid #229954!important;
+}
