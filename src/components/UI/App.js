@@ -1,9 +1,22 @@
 // import styles from './App.module.css';
 import Pedidos from '../pedidos/Pedidos';
-import guac from '../../img/guacamaya.jpg';
-import lasa from '../../img/lasagna.jpg';
-import pizza from '../../img/pizza.jpg';
-import tacos from '../../img/tripa.jpg';
+
+import uno from '../../img/Athleisure/1.jpg';
+import dos from '../../img/Athleisure/2.jpg';
+import tres from '../../img/Athleisure/3.jpg';
+import cuatro from '../../img/Athleisure/4.jpg';
+import cinco from '../../img/Athleisure/5.JPG';
+
+import pantalon1 from '../../img/Bottoms/1.JPG';
+import pantalon2 from '../../img/Bottoms/2.webp';
+import pantalon3 from '../../img/Bottoms/3.JPG';
+import pantalon4 from '../../img/Bottoms/4.JPG';
+import pantalon5 from '../../img/Bottoms/5.JPG';
+
+import hoodie1 from '../../img/Hoodies/1.JPG';
+import hoodie2 from '../../img/Hoodies/5.JPG';
+
+
 import Cart from '../../components/pedidos/Cart'
 import React, { useState } from 'react';
 import cx from 'classnames';
@@ -16,52 +29,88 @@ function App() {
   const expenses = [
     {
       id: Math.random(),
-      nombre_comida: "Tacos de tripa",
-      descripcion: "Ricos tacos de tipa dorada",
-      precio: 250,
-      url_img: tacos
+      nombre_comida: "Conjunto deportivo",
+      descripcion: "Conjunto deportivo color verde pastel.",
+      precio: 600,
+      url_img: uno
     },
     {
       id: Math.random(),
       nombre_comida: "Pizza peperoni",
       descripcion: "Pizaaaaaaaaaaaaaaaa",
       precio: 50,
-      url_img: pizza
+      url_img: dos
     },
     {
       id: Math.random(),
       nombre_comida: "Guacamaya",
       descripcion: "Guacamayaaaa",
       precio: 600,
-      url_img: guac
+      url_img: tres
     },
     {
       id: Math.random(),
       nombre_comida: "Lasagna",
       descripcion: "Lasagnaaaa",
       precio: 600,
-      url_img: lasa
+      url_img: cuatro
     },
     {
       id: Math.random(),
       nombre_comida: "Lasagna",
       descripcion: "Lasagnaaaa",
       precio: 600,
-      url_img: lasa
+      url_img: cinco
     },
     {
       id: Math.random(),
       nombre_comida: "Lasagna",
       descripcion: "Lasagnaaaa",
       precio: 600,
-      url_img: lasa
+      url_img: pantalon1
+    },
+
+    {
+      id: Math.random(),
+      nombre_comida: "Lasagna",
+      descripcion: "Lasagnaaaa",
+      precio: 600,
+      url_img: pantalon2
     },
     {
       id: Math.random(),
       nombre_comida: "Lasagna",
       descripcion: "Lasagnaaaa",
       precio: 600,
-      url_img: lasa
+      url_img: pantalon3
+    },
+    {
+      id: Math.random(),
+      nombre_comida: "Lasagna",
+      descripcion: "Lasagnaaaa",
+      precio: 600,
+      url_img: pantalon4
+    },
+    {
+      id: Math.random(),
+      nombre_comida: "Lasagna",
+      descripcion: "Lasagnaaaa",
+      precio: 600,
+      url_img: pantalon5
+    },
+    {
+      id: Math.random(),
+      nombre_comida: "Lasagna",
+      descripcion: "Lasagnaaaa",
+      precio: 600,
+      url_img: hoodie1
+    },
+    {
+      id: Math.random(),
+      nombre_comida: "Lasagna",
+      descripcion: "Lasagnaaaa",
+      precio: 600,
+      url_img: hoodie2
     }
   ];
   let [cantidad, setCantidad] = useState(0);
