@@ -1,20 +1,21 @@
 import styles from './Cart.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
+import logo from '../../img/logo2.png';
 
 function Cart(props) {
     return (
         <>
             <div className={cx(globalStyles.div, globalStyles['d-flex'], styles['container'])}>
                 <div className={styles['div-title']}>
-                    REACT PEDIDOS
+                    <img src={logo} height={70} width={180}/>
                 </div>
 
                 <div className={styles['div-cart']}>
                     <button className={styles['btn-not']}>
                         <i className="bi bi-cart"></i>
                         Carrito
-                        <span className="badge bg-danger">{props.cantidad}</span>
+                        <span className="badge bg-primary">{props.cantidad}</span>
                     </button>
                 </div>
 
