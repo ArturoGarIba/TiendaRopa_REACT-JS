@@ -1,13 +1,11 @@
 import styles from './Cart.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
-<<<<<<< HEAD
+
 import React, { useContext, useState } from 'react';
 // import ModalContext from '../context/ModalContext';
 import ModalCart from '../modalCart/ModalCart'
-=======
 import logo from '../../img/logo2.png';
->>>>>>> 0d518641e6ec5f53320944e22fcf704be703ab2a
 
 function Cart(props) {
 
@@ -21,18 +19,15 @@ function Cart(props) {
                 </div>
 
                 <div className={styles['div-cart']}>
-<<<<<<< HEAD
                     
                     <ModalCart count={props.cantidad}>
 
                     </ModalCart>
-=======
                     <button className={styles['btn-not']}>
                         <i className="bi bi-cart"></i>
                         Carrito
                         <span className="badge bg-primary">{props.cantidad}</span>
                     </button>
->>>>>>> 0d518641e6ec5f53320944e22fcf704be703ab2a
                 </div>
 
             </div>
