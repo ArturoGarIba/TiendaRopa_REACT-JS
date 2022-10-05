@@ -5,9 +5,11 @@ import lasa from '../../img/lasagna.jpg';
 import pizza from '../../img/pizza.jpg';
 import tacos from '../../img/tripa.jpg';
 import Cart from '../../components/pedidos/Cart'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
+
+// import Button from 'react-bootstrap/Button';
 
 
 function App() {
@@ -68,17 +70,20 @@ function App() {
     // console.log(event);
   }
 
-  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
-    <>
-      
+    <React.Fragment>
+
       <Cart cantidad={cantidad} />
+
       <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['row-cols-1'], globalStyles['row-cols-md-3'], globalStyles['text-center'])}>
         <Pedidos items={expenses} agregarCarrito={agregarCarrito} />
       </div>
-
-    </>
+    </React.Fragment>
   );
 }
 

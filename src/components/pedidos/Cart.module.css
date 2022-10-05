@@ -27,17 +27,22 @@
 
 .svg {
     /* background-color: blue; */
-    background-image: url(../../img/fondo.jpg);
+    background-image: url(../../img/fondo.jpg) !important;
+    
 }
 
 .div-somos {
     background-color: rgb(58, 58, 58, 0.8);
     color: white;
-    text-align: center;
+    /* text-align: justify; */
     width: 70%;
     border-radius: 15px;
     position: absolute;
     bottom: 2.5rem;
+    /* top: 20%;
+    left: 50%;
+    transform: translate(-50%); */
+    /* bottom: 7em; */
     padding: 15px;
 }
 
@@ -45,6 +50,16 @@
     display: flex;
     justify-content: center;
     position: relative;
+}
+
+.h2-somos{
+    font-size: 1em;
+    text-align: center;
+}
+
+.p-somos{
+    font-size: 1em;
+    text-align: center;
 }
 
 .btn-not {
@@ -70,10 +85,23 @@
 @media (max-width: 550px) {
     .div-title {
         font-size: 1em;
-        width: 70%;
+        width: 60%;
     }
 
     .div-cart {
-        width: 30%;
+        width: 40%;
+    }
+
+    .div-somos{
+        width: 98%;
+    }
+    .p-somos{
+        text-align: justify;
+    }
+}
+
+@media (max-width: 715px) {
+    .svg{
+        /* height: 25vw; */
     }
 }
