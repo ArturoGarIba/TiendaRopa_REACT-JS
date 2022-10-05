@@ -26,12 +26,14 @@ function PedidosItem(props) {
                 <img src={props.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
                 <div className={cx(globalStyles.div, styles['card-body'])}>
                     <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
-                    <p className={cx(globalStyles['card-text'])}>{props.descripcion}</p>
-                    <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>${props.precio}</p>
+                    <p className={cx(globalStyles['card-text'], styles['card-desc'])}>{props.descripcion}</p>
+                    <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>$MXN {props.precio}</p>
                     <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
                         <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
                             Cantidad
-                            <input type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1" value={cantidad} onChange={cambioCantidad}></input>
+                            <input type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1" value={cantidad} onChange={cambioCantidad}>
+
+                            </input>
                         </div>
                         <Alert cantidad={cantidad}>       
                         </Alert>

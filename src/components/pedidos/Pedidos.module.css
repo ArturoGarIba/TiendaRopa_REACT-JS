@@ -1,9 +1,10 @@
 .expenses {
-    padding: 1rem;
+    /* padding: 1rem; */
     /* background-color: rgba(215, 215, 215, 0.95); */
     margin: 2rem auto;
     /* width: 50rem;
     max-width: 95%; */
+    /* padding-right: 0 !important; */
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   }
@@ -11,4 +12,6 @@
   .div-cent{
     display: flex;
     justify-content: center;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }

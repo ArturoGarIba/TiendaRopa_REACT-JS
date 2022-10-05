@@ -8,17 +8,18 @@ import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 function Alert({ cantidad }) {
 
   const verify = () => {
-    if(cantidad > 0){
+    if (cantidad > 0) {
       success()
-    }else{
+    } else {
       error()
     }
   }
   const success = () => {
     setTimeout(() => {
       toast.success('Producto agregado correctamente', {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        autoClose: 2000
+        // position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2000,
+        className: styles['msj-success']
       });
     }, 0);
   };
@@ -26,8 +27,9 @@ function Alert({ cantidad }) {
   const error = () => {
     setTimeout(() => {
       toast.error(`Debes ingresar al menos un producto para agregar al carrito`, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        className: styles['msj-error']
+        // position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2000,
+        className: cx(styles['msj-error'])
       });
     }, 0);
   }
@@ -35,8 +37,11 @@ function Alert({ cantidad }) {
   return (
     <>
       <button type="submit" onClick={verify} className={cx(styles['btn-add'], globalStyles.btn, globalStyles['mb-3'])}>
-        <i className="bi bi-plus-circle"></i>
-        Agregar
+        {/* <i className="bi bi-plus-circle"></i> */}
+        <i className="bi bi-cart"></i>
+        <span className={cx(styles['mar-lef'])}>
+          Agregar al carrito
+        </span>
       </button>
       <ToastContainer />
     </>

@@ -1,9 +1,9 @@
 .msj-error{
-    background-color: #C0392B;
+    /* background-color: #d2a49f5c !important; */
   }
 
 .msj-success{
-    background-color: #86d3a6;
+    /* background-color: #b6dfc7 !important; */
 }
 
 .btn-add{
@@ -12,6 +12,7 @@
     border: 3px solid #229954 !important;
     font-size: 1em;
     font-weight: bolder;
+    border-radius: 15px !important;
 }
 
 .btn-add:hover{
@@ -22,3 +23,8 @@
 .btn-add:active{
     border: 1px solid #229954!important;
 }
+
+.mar-lef{
+    margin-left: 5px;
+}
+

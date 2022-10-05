@@ -13,7 +13,7 @@ function Pedidos(props) {
     
             props.items.map((expense) => (
                 <div className={cx(globalStyles.div, globalStyles['col-lg-3'], globalStyles['col-sm-6'], globalStyles['mb-3'], styles['div-cent'])}>
-                    <Card className={cx()}>
+                    <Card >
                         <PedidosItem
                             key={expense.id}
                             url_img={expense.url_img}

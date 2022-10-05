@@ -128,9 +128,10 @@ function App() {
     <React.Fragment>
 
       <Cart cantidad={cantidad} />
-
-      <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['row-cols-1'], globalStyles['row-cols-md-3'], globalStyles['text-center'])}>
-        <Pedidos items={expenses} agregarCarrito={agregarCarrito} />
+      <div className={cx(globalStyles['container-fluid'], globalStyles['my-4'], globalStyles['p-3'])}>
+        <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['text-center'])}>
+          <Pedidos items={expenses} agregarCarrito={agregarCarrito} />
+        </div>
       </div>
     </React.Fragment>
   );

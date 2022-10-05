@@ -22,27 +22,31 @@ function ModalCart(props) {
         <ModalContext.Provider value={{show}}>
             <React.Fragment>
             <button className={styles['btn-not']} onClick={showModal}>
-                <i className="bi bi-cart"></i>
+                
+                <i class="bi bi-bag-check-fill"></i>
+                <span className={styles['mar-lr']}>
                 Carrito
-                <span className="badge bg-danger">{props.count}</span>
+                </span>
+                <span className="badge bg-primary">{props.count}</span>
             </button>
             <Modal
                 show={show}
                 backdrop="static"
                 keyboard={false}
             >
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal title</Modal.Title>
+                <Modal.Header >
+                    <Modal.Title>CARRITO DE COMPRAS</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    I will not close if you click outside me. Don't even try to press
-                    escape key.
+                    (Aqui ira la lista de productos agregados)
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={hiddeModal}>
-                        Close
+                    <Button variant="danger" onClick={hiddeModal}>
+                        Continuar Comprando
                     </Button>
-                    <Button variant="primary" onClick={hiddeModal}>Understood</Button>
+                    <Button variant="primary" onClick={hiddeModal}>
+                        Ir a Pagar
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </React.Fragment>
