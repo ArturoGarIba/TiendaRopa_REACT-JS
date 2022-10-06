@@ -27,7 +27,11 @@ function PedidosItem(props) {
                 <div className={cx(globalStyles.div, styles['card-body'])}>
                     <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
                     <p className={cx(globalStyles['card-text'], styles['card-desc'])}>{props.descripcion}</p>
+<<<<<<< HEAD
                     <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'], styles['precio-card'])}>$MXN {props.precio}</p>
+=======
+                    <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>MXN ${props.precio}</p>
+>>>>>>> 18bde56448ab350050f6bf33d8e55b8b744b7409
                     <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
                         <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
                             Cantidad

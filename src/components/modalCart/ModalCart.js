@@ -9,20 +9,19 @@ function ModalCart(props) {
 
     const [show, setShow] = useState(false);
 
-
     const showModal = () => {
         setShow(true)
     }
 
-    const hiddeModal = () => {
+    const hideModal = () => {
         setShow(false)
     }
+
     return (
 
         <ModalContext.Provider value={{show}}>
             <React.Fragment>
             <button className={styles['btn-not']} onClick={showModal}>
-                
                 <i class="bi bi-bag-check-fill"></i>
                 <span className={styles['mar-lr']}>
                 Carrito
@@ -31,20 +30,20 @@ function ModalCart(props) {
             </button>
             <Modal
                 show={show}
-                backdrop="static"
                 keyboard={false}
+                onHide={hideModal}
             >
                 <Modal.Header >
-                    <Modal.Title>CARRITO DE COMPRAS</Modal.Title>
+                    <Modal.Title>🛒 Mi Carrito</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     (Aqui ira la lista de productos agregados)
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger" onClick={hiddeModal}>
+                    <Button variant="danger" onClick={hideModal}>
                         Continuar Comprando
                     </Button>
-                    <Button variant="primary" onClick={hiddeModal}>
+                    <Button variant="primary" onClick={hideModal}>
                         Ir a Pagar
                     </Button>
                 </Modal.Footer>
