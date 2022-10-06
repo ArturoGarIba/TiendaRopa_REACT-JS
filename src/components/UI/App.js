@@ -29,86 +29,86 @@ function App() {
   const expenses = [
     {
       id: Math.random(),
-      nombre_comida: "Conjunto deportivo",
-      descripcion: "Conjunto deportivo color verde pastel.",
+      nombre_comida: "Men Co-ords",
+      descripcion: "Men Solid Button Up Shirt & Shorts",
       precio: 600,
       url_img: uno
     },
     {
       id: Math.random(),
-      nombre_comida: "Pizza peperoni",
-      descripcion: "Pizaaaaaaaaaaaaaaaa",
-      precio: 50,
+      nombre_comida: " Men Co-ords",
+      descripcion: " Men Seam Front Tee & Track Shorts Set",
+      precio: 500,
       url_img: dos
     },
     {
       id: Math.random(),
-      nombre_comida: "Guacamaya",
-      descripcion: "Guacamayaaaa",
+      nombre_comida: " Men Two-piece Outfits",
+      descripcion: "Men Thermal Hoodie & Sweatpants",
       precio: 600,
       url_img: tres
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men Two-piece Outfits",
+      descripcion: "Man Hoodie & Sweatpants",
       precio: 600,
       url_img: cuatro
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men Two-piece Outfits",
+      descripcion: "Men Slogan Graphic Tee & Track Shorts",
       precio: 600,
       url_img: cinco
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: " Men Bottoms",
+      descripcion: "HEIN Men Slant Pockets Tapered Pants",
       precio: 600,
       url_img: pantalon1
     },
 
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men Pants",
+      descripcion: "Men Drawstring Waist Slant Pocket Pants",
       precio: 600,
       url_img: pantalon2
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men Bottoms",
+      descripcion: "Men Solid Drawstring Waist Pants",
       precio: 600,
       url_img: pantalon3
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men shorts",
+      descripcion: "Men Solid Slant Pocket Shorts",
       precio: 600,
       url_img: pantalon4
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Khaki pants",
+      descripcion: "Men Slant Pocket Tapered Pants",
       precio: 600,
       url_img: pantalon5
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men Hoodies",
+      descripcion: "SHEIN Men Drawstring Hoodie",
       precio: 600,
       url_img: hoodie1
     },
     {
       id: Math.random(),
-      nombre_comida: "Lasagna",
-      descripcion: "Lasagnaaaa",
+      nombre_comida: "Men Sweatshirts",
+      descripcion: "Men Thermal Lined Sweatshirt",
       precio: 600,
       url_img: hoodie2
     }

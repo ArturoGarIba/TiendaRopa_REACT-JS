@@ -48,7 +48,7 @@
 .container-somos {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: relative top;
 }
 
 .h2-somos{
@@ -57,7 +57,7 @@
 }
 
 .p-somos{
-    font-size: 1em;
+    font-size: 1.3em;
     text-align: center;
 }
 
