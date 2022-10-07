@@ -1,13 +1,16 @@
 import styles from './PedidosItem.module.css';
-import { useState } from "react";
+import { useState, useContext, useRef } from "react";
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import Alert from '../alert/Alert';
+import StateContext from "../context/StateContext"
 // import globalStyles from '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 function PedidosItem(props) {
 
     const [cantidad, setCantidad] = useState(0);
+    const inputs = useRef([]);
+    const prendas = useContext(StateContext);
 
     const cambioCantidad = (event) => {
         setCantidad(event.target.value);
@@ -19,6 +22,19 @@ function PedidosItem(props) {
         // setCantidad("");
     }
 
+    function agregarPrenda(index){
+        const prenda = prendas[index];
+        const input = inputs.current[index];
+
+        if (input.value) {
+			dispatch({
+				type: actions.ADD_MEAL,
+				payload: { meal, quantity: parseInt(input.value) },
+			});
+
+			input.value = "";
+		}
+    }
 
     return (
         <>
@@ -27,9 +43,7 @@ function PedidosItem(props) {
                 <div className={cx(globalStyles.div, styles['card-body'])}>
                     <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
                     <p className={cx(globalStyles['card-text'], styles['card-desc'])}>{props.descripcion}</p>
-
-                    <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'], styles['precio-card'])}>$MXN {props.precio}</p>
-
+                    <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>MXN ${props.precio}</p>
                     <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
                         <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
                             Cantidad
