@@ -1,7 +1,6 @@
 import styles from './Cart.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
-
 import React, { useContext, useState } from 'react';
 // import ModalContext from '../context/ModalContext';
 import ModalCart from '../modalCart/ModalCart'
