@@ -1,35 +1,58 @@
 import Modal from 'react-bootstrap/Modal';
 import ModalContext from '../context/ModalContext';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import  Button  from 'react-bootstrap/Button';
 import styles from './ModalCart.module.css'
+import actions from "../reducers/Actions";
+import StateContext from '../context/state';
+import cx from 'classnames';
+import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
 
 function ModalCart(props) {
 
-    const [show, setShow] = useState(false);
+
+    const { state, dispatch } = useContext(StateContext);
+	const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
 
     const showModal = () => {
-        setShow(true)
+        dispatch({
+			type: actions.OPEN_MODAL,
+		});
     }
 
     const hideModal = () => {
-        setShow(false)
+        dispatch({
+			type: actions.CLOSE_MODAL,
+		});
     }
 
+    function increment(id) {
+		dispatch({
+			type: actions.UPDATE_MEAL,
+			payload: { id, quantity: 1 },
+		});
+	}
+
+	function decrement(id) {
+		dispatch({
+			type: actions.UPDATE_MEAL,
+			payload: { id, quantity: -1 },
+		});
+	}
     return (
 
-        <ModalContext.Provider value={{show}}>
-            <React.Fragment>
+        
+            <>
             <button className={styles['btn-not']} onClick={showModal}>
-                <i class="bi bi-bag-check-fill"></i>
+                <i className="bi bi-bag-check-fill"></i>
                 <span className={styles['mar-lr']}>
                 Carrito
                 </span>
-                <span className="badge bg-primary">{props.count}</span>
+                <span className="badge bg-primary">{total}</span>
             </button>
             <Modal
-                show={show}
+                show={state.isOpen}
                 keyboard={false}
                 onHide={hideModal}
             >
@@ -37,7 +60,36 @@ function ModalCart(props) {
                     <Modal.Title>🛒 Mi Carrito</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    (Aqui ira la lista de productos agregados)
+                {state.cart.map((cartItem) => (
+						<li>
+							<section >
+								<article>
+                                <img src={cartItem.meal.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
+									<h2>{cartItem.meal.nombre_comida}</h2>
+									<div>
+										<h4>$ {cartItem.meal.precio}</h4>
+										<figure>
+											<h4>x {cartItem.quantity}</h4>
+										</figure>
+									</div>
+								</article>
+								<article>
+									<Button
+										
+										onClick={() => decrement(cartItem.meal.id)}
+									>
+										-
+									</Button>
+									<Button
+										
+										onClick={() => increment(cartItem.meal.id)}
+									>
+										+
+									</Button>
+								</article>
+							</section>
+						</li>
+					))}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={hideModal}>
@@ -48,8 +100,8 @@ function ModalCart(props) {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </React.Fragment>
-        </ModalContext.Provider>
+        </>
+        
     );
 }
 

@@ -1,20 +1,25 @@
 // import styles from './App.module.css';
-import Pedidos from '../pedidos/Pedidos';
+import Producto from '../../pages/Productos';
 import Cart from '../../components/pedidos/Cart'
 import React, { useState } from 'react';
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
+import reducer from "../reducers/Reducer";
+import initialState from "../reducers/InitialState";
+import { useReducer } from "react";
+import StateContext from "../context/state";
 
 // import Button from 'react-bootstrap/Button';
 
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
   
   let [cantidad, setCantidad] = useState(0);
-  const agregarCarrito = (event) => {
-    setCantidad((prevState) => cantidad += parseInt(event))
-    // console.log(event);
-  }
+  // const agregarCarrito = (event) => {
+  //   setCantidad((prevState) => cantidad += parseInt(event))
+    
+  // }
 
   const [show, setShow] = useState(false);
 
@@ -22,15 +27,15 @@ function App() {
   const handleShow = () => setShow(true);
 
   return (
-    <React.Fragment>
+    <StateContext.Provider value={{ state, dispatch }}>
 
-      <Cart cantidad={cantidad} />
+      <Cart/>
       <div className={cx(globalStyles['container-fluid'], globalStyles['my-4'], globalStyles['p-3'])}>
         <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['text-center'])}>
-          <Pedidos  agregarCarrito={agregarCarrito} />
+          <Producto/>
         </div>
       </div>
-    </React.Fragment>
+    </StateContext.Provider>
   );
 }
 

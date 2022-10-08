@@ -19,9 +19,9 @@ function Cart(props) {
 
                 <div className={styles['div-cart']}>
 
-                    <ModalCart count={props.cantidad}>
+                    <ModalCart/>
 
-                    </ModalCart>
+                    
                 </div>
 
             </div>
