@@ -6,7 +6,7 @@ import styles from './ModalCart.module.css'
 import actions from "../reducers/Actions";
 import StateContext from '../context/state';
 import cx from 'classnames';
-import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
+//import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
 
 function ModalCart(props) {
@@ -38,6 +38,13 @@ function ModalCart(props) {
 		dispatch({
 			type: actions.UPDATE_MEAL,
 			payload: { id, quantity: -1 },
+		});
+	}
+
+	function eliminar(id){
+		dispatch({
+			type: actions.ELIMINAR_PRENDA,
+			payload: {id},
 		});
 	}
     return (
@@ -86,7 +93,13 @@ function ModalCart(props) {
 									>
 										+
 									</Button>
+									<Button	
+										onClick={() => eliminar(cartItem.meal.id)}
+									>
+										DELETE
+									</Button>
 								</article>
+									
 							</section>
 						</li>
 					))}

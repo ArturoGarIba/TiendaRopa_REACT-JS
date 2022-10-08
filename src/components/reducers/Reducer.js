@@ -45,6 +45,15 @@ function reducer(state, action) {
 				isOpen: false,
 			};
 
+		case actions.ELIMINAR_PRENDA:
+			id = action.payload.id;
+			quantity = action.payload.quantity;
+			item = state.cart.filter((c) => c.meal.id !== id);
+			item.id = null;
+			return { ...state,
+				cart: item};
+
+
 		default:
 			throw new Error("No existe dicha acción");
 	}

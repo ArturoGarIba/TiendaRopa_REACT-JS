@@ -10,6 +10,9 @@ const actions = {
 
 	// Acción que cierra el modal del carrito
 	CLOSE_MODAL: "CLOSE_MODAL",
+
+	//Acción de elliminar elemento del carrito
+	ELIMINAR_PRENDA : "ELIMINAR_PRENDA",
 };
 
 export default actions;
