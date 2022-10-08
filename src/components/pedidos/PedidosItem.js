@@ -19,21 +19,21 @@ function PedidosItem(props) {
     const agregarCarrito = (event) => {
         event.preventDefault();
         props.changeCantidad(cantidad);
-        // setCantidad("");
+        agregarPrenda();
     }
 
-    function agregarPrenda(index){
-        const prenda = prendas[index];
-        const input = inputs.current[index];
-
-        if (input.value) {
-			dispatch({
-				type: actions.ADD_MEAL,
-				payload: { meal, quantity: parseInt(input.value) },
-			});
-
-			input.value = "";
-		}
+    function agregarPrenda(){
+        // const prenda = prendas[index];
+        const input = inputs.current[props.index];
+        console.log(props.index)
+        // if (input.value) {
+		// 	dispatch({
+		// 		type: actions.ADD_MEAL,
+		// 		payload: { meal, quantity: parseInt(input.value) },
+		// 	});
+		// }
+        input.value = "0"
+        setCantidad(0)
     }
 
     return (
@@ -47,7 +47,9 @@ function PedidosItem(props) {
                     <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
                         <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
                             Cantidad
-                            <input type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1" value={cantidad} onChange={cambioCantidad}>
+                            <input ref={(el) => (inputs.current[props.index] = el)}
+                            type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1"
+                            value={cantidad}  onChange={cambioCantidad}>
 
                             </input>
                         </div>

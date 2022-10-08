@@ -22,7 +22,7 @@ function ModalCart(props) {
         <ModalContext.Provider value={{show}}>
             <React.Fragment>
             <button className={styles['btn-not']} onClick={showModal}>
-                <i class="bi bi-bag-check-fill"></i>
+                <i className="bi bi-bag-check-fill"></i>
                 <span className={styles['mar-lr']}>
                 Carrito
                 </span>

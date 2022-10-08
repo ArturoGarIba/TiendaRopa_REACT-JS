@@ -25,7 +25,7 @@ function Cart(props) {
                 </div>
 
             </div>
-            <div className={cx(globalStyles['mb-5'])}>
+            <div className={cx(styles['relative'])}>
                 {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className={cx(styles['svg'])}>
                     <path fill="#FFFFFF" fillOpacity="1" d="M0,96L80,85.3C160,75,320,53,480,85.3C640,117,800,203,960,245.3C1120,288,1280,288,1360,288L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
                     </path>
@@ -37,8 +37,6 @@ function Cart(props) {
                         {/* class="transition-all duration-300 ease-in-out delay-150 path-0"> */}
                     </path>
                 </svg>
-            </div>
-            <div className={styles['container-somos']}>
                 <div className={styles['div-somos']}>
 
                     <p className={styles['h2-somos']}>
@@ -51,6 +49,10 @@ function Cart(props) {
                         Athleisure + Bottoms + Hoodies + Jackets =  ***
                     </p>
                 </div>
+
+            </div>
+            <div className={styles['container-somos']}>
+                
             </div>
         </React.Fragment>
     );
