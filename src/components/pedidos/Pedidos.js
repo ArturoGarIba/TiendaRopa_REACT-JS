@@ -5,16 +5,17 @@ import PedidosItem from './PedidosItem'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import styles from './Pedidos.module.css'
+import { useContext, useRef } from "react";
+import MenuContext from "../context/menu";
+
 function Pedidos(props) {
 
-    const [producto, setProducto] = useState([]);
-    let data = null;
-
-     
-    let index = 0;
+    const producto = useContext(MenuContext);
+    
 
     const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
 
+    
     useEffect(() => {
         const fetchUser = async () => {
           const url = `${BASE_URL}/productos.json?orderBy="$key"`;
@@ -34,8 +35,8 @@ function Pedidos(props) {
     const showCantidad = (event) => {
         props.agregarCarrito(event)
     }
+    
     return (
-        
         producto.map((expense, index) => (
            
                 <div className={cx(globalStyles.div, globalStyles['col-lg-3'], globalStyles['col-sm-6'], globalStyles['mb-3'], styles['div-cent'])}>
@@ -46,6 +47,7 @@ function Pedidos(props) {
                             nombre_comida={expense.nombre_comida}
                             descripcion={expense.descripcion}
                             precio={expense.precio}
+                            index={index}
                             changeCantidad={showCantidad}
                             index={index}
                         />
