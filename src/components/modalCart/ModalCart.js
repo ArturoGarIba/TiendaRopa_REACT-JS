@@ -14,6 +14,7 @@ function ModalCart(props) {
 
     const { state, dispatch } = useContext(StateContext);
 	const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalCompra = state.cart.reduce((sum, item) => sum + (item.quantity * item.meal.precio), 0);
 
     const showModal = () => {
         dispatch({
@@ -40,6 +41,19 @@ function ModalCart(props) {
 			payload: { id, quantity: -1 },
 		});
 	}
+
+    function eliminar(id){
+
+        dispatch({
+
+            type: actions.ELIMINAR_PRENDA,
+
+            payload: {id},
+
+        });
+
+    }
+
     return (
 
         
@@ -67,29 +81,39 @@ function ModalCart(props) {
                                 <img src={cartItem.meal.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
 									<h2>{cartItem.meal.nombre_comida}</h2>
 									<div>
-										<h4>$ {cartItem.meal.precio}</h4>
+										<h4>$ {cartItem.meal.precio * cartItem.quantity}</h4>
 										<figure>
 											<h4>x {cartItem.quantity}</h4>
 										</figure>
 									</div>
 								</article>
 								<article>
-									<Button
-										
-										onClick={() => decrement(cartItem.meal.id)}
-									>
-										-
-									</Button>
+                                   {cartItem.quantity > 1 ?  <Button onClick={() => decrement(cartItem.meal.id)}>-</Button> : <a></a> } 
+									
 									<Button
 										
 										onClick={() => increment(cartItem.meal.id)}
 									>
 										+
 									</Button>
+                                    <Button    
+
+                                        onClick={() => eliminar(cartItem.meal.id)}
+
+                                    >
+
+                                        DELETE
+
+                                    </Button>
 								</article>
 							</section>
 						</li>
-					))}
+					))
+                    
+                    }
+                    
+                    <br/>
+                    <h4>Total compra: ${totalCompra}</h4>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={hideModal}>
