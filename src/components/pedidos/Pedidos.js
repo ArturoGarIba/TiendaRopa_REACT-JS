@@ -16,21 +16,21 @@ function Pedidos(props) {
     const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
 
     
-    useEffect(() => {
-        const fetchUser = async () => {
-          const url = `${BASE_URL}/productos.json?orderBy="$key"`;
-          const response = await fetch(url);
-          if (!response.ok) throw new Error("Algo salió mal :(");
-            const responseData = await response.json();
-             data = [...responseData]
-            setProducto( [...data]);
-            console.log(data)
+    // useEffect(() => {
+    //     const fetchUser = async () => {
+    //       const url = `${BASE_URL}/productos.json?orderBy="$key"`;
+    //       const response = await fetch(url);
+    //       if (!response.ok) throw new Error("Algo salió mal :(");
+    //         const responseData = await response.json();
+    //          data = [...responseData]
+    //         setProducto( [...data]);
+    //         console.log(data)
 
           
-        };
-        fetchUser()
+    //     };
+    //     fetchUser()
         
-      }, []);
+    //   }, []);
 
     const showCantidad = (event) => {
         props.agregarCarrito(event)
@@ -49,7 +49,7 @@ function Pedidos(props) {
                             precio={expense.precio}
                             index={index}
                             changeCantidad={showCantidad}
-                            index={index}
+                            // index={index}
                         />
                     </Card>
                  </div>

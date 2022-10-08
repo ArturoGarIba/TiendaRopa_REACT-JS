@@ -15,11 +15,8 @@
     "react-alert": "^7.0.3",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-paginate": "^8.1.3",
-=======
     "react-router-dom": "^6.4.2",
->>>>>>> 604fe5a61aa68a83bfa79f436f3dbbb9c243c5bb
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
     "web-vitals": "^2.1.4"

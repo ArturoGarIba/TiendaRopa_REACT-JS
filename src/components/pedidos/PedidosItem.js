@@ -22,26 +22,26 @@ function PedidosItem(props) {
     }
 
     const agregarCarrito = (event) => {
-<<<<<<< HEAD
-        event.preventDefault();
-        props.changeCantidad(cantidad);
-        agregarPrenda();
-    }
+// <<<<<<< HEAD
+//         event.preventDefault();
+//         props.changeCantidad(cantidad);
+//         agregarPrenda();
+//     }
 
-    function agregarPrenda(){
-        // const prenda = prendas[index];
-        const input = inputs.current[props.index];
-        console.log(props.index)
-        // if (input.value) {
-		// 	dispatch({
-		// 		type: actions.ADD_MEAL,
-		// 		payload: { meal, quantity: parseInt(input.value) },
-		// 	});
-		// }
-        input.value = "0"
-        setCantidad(0)
-    }
-=======
+//     function agregarPrenda(){
+//         // const prenda = prendas[index];
+//         const input = inputs.current[props.index];
+//         console.log(props.index)
+//         // if (input.value) {
+// 		// 	dispatch({
+// 		// 		type: actions.ADD_MEAL,
+// 		// 		payload: { meal, quantity: parseInt(input.value) },
+// 		// 	});
+// 		// }
+//         input.value = "0"
+//         setCantidad(0)
+//     }
+// =======
      //   event.preventDefault();
       //  props.changeCantidad(cantidad);
         // setCantidad("");
@@ -65,7 +65,6 @@ function PedidosItem(props) {
      function goToMeal(id) {
 		//navigate(`/meal/${id}`);
 	}
->>>>>>> 604fe5a61aa68a83bfa79f436f3dbbb9c243c5bb
 
     return (
         <>
@@ -78,15 +77,9 @@ function PedidosItem(props) {
                     <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
                         <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
                             Cantidad
-<<<<<<< HEAD
-                            <input ref={(el) => (inputs.current[props.index] = el)}
-                            type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1"
-                            value={cantidad}  onChange={cambioCantidad}>
-=======
                             <input 
                             ref={(el) => (inputs.current[props.index] = el)}
                             type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1" value={cantidad} onChange={cambioCantidad}>
->>>>>>> 604fe5a61aa68a83bfa79f436f3dbbb9c243c5bb
 
                             </input>
                         </div>
