@@ -8,6 +8,8 @@ import reducer from "../reducers/Reducer";
 import initialState from "../reducers/InitialState";
 import { useReducer } from "react";
 import StateContext from "../context/state";
+import Descripcion from '../descripcion/Descripcion';
+
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -28,9 +30,11 @@ function App() {
     <StateContext.Provider value={{ state, dispatch }}>
 
       <Cart/>
+      <Descripcion></Descripcion>
       <div className={cx(globalStyles['container-fluid'], globalStyles['my-4'], globalStyles['p-3'])}>
         <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['text-center'])}>
           <Producto/>
+          
         </div>
       </div>
     </StateContext.Provider>
