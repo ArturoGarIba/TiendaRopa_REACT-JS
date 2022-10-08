@@ -33,6 +33,20 @@ function reducer(state, action) {
 			item.quantity += quantity;
 			return { ...state, cart: [...state.cart] };
 
+		case actions.ELIMINAR_PRENDA:
+
+            id = action.payload.id;
+
+            quantity = action.payload.quantity;
+
+            item = state.cart.filter((c) => c.meal.id !== id);
+
+            item.id = null;
+
+            return { ...state,
+
+                cart: item};
+
 		case actions.OPEN_MODAL:
 			return {
 				...state,

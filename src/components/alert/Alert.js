@@ -7,32 +7,7 @@ import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
 function Alert(props) {
 
-  const verify = () => {
-    if (props.cantidad > 0) {
-      success()
-    } else {
-      error()
-    }
-  }
-  const success = () => {
-    setTimeout(() => {
-      toast.success('Producto agregado correctamente', {
-        // position: toast.POSITION.BOTTOM_RIGHT,
-        autoClose: 2000,
-        className: styles['msj-success']
-      });
-    }, 0);
-  };
-
-  const error = () => {
-    setTimeout(() => {
-      toast.error(`Debes ingresar al menos un producto para agregar al carrito`, {
-        // position: toast.POSITION.BOTTOM_RIGHT,
-        autoClose: 2000,
-        className: cx(styles['msj-error'])
-      });
-    }, 0);
-  }
+  
 
   return (
     <>
