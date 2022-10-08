@@ -7,10 +7,12 @@ import reducer from "../reducers/Reducer";
 import initialState from "../reducers/InitialState";
 import { useReducer } from "react";
 import StateContext from "../context/state";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import InicioView from '../inicio/InicioView';
 import NotFoundView from "../NotFoundView/NotFoundView";
 import CheckOut from '../btnCheckOut/CheckOut';
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   let [cantidad, setCantidad] = useState(0);
@@ -22,6 +24,7 @@ function App() {
   const handleShow = () => setShow(true);
   return (
     <StateContext.Provider value={{ state, dispatch }}>
+
       <Router>
         <Cart />
             <Routes>
@@ -31,6 +34,7 @@ function App() {
               <Route path="*" element={<NotFoundView />} />
             </Routes>
       </Router>
+
     </StateContext.Provider>
   );
 }
