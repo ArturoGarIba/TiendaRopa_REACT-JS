@@ -1,0 +1,105 @@
+.div-cart {
+    background-color: rgb(105, 105, 105, 0.8);
+    border-radius: 15px;
+    /* padding: 10px; */
+    color: white;
+    text-align: center;
+    width: 20%;
+    filter: blur(5);
+    height: fit-content;
+    text-decoration: none;
+}
+.div-title {
+    width: 80%;
+    padding: 20px;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+.container {
+    background-color: black;
+    /* background-image: url(../../img/fondo.jpg); */
+    padding: 15px;
+    align-items: center;
+    max-width: 100% !important;
+}
+.svg {
+    background-image: url(../../img/xxx.jpg);
+    background-size: cover;
+    /* background-image: url(../../img/xx.jpg); */
+}
+.div-somos {
+    background-color: rgb(58, 58, 58, 0.8);
+    color: white;
+    width: 70%;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 17rem;
+    margin: 0 auto;
+    padding: 15px;
+    height: fit-content;
+}
+.relative{
+    position: relative;
+}
+.container-somos {
+    /* display: flex;
+    justify-content: center;
+    position: relative top; */
+    /* position: relative; */
+}
+.h2-somos{
+    font-size: 2em;
+    text-align: center;
+}
+.p-somos{
+    font-size: 1.3em;
+    text-align: center;
+}
+.btn-not {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    /* for button */
+    -webkit-appearance: button;
+    /* for input */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* width: ; */
+    padding: 15px;
+}
+@media (max-width: 550px) {
+    .div-title {
+        font-size: 1em;
+        width: 60%;
+    }
+    .div-cart {
+        width: 40%;
+    }
+    .div-somos{
+        width: 98%;
+        font-size: small;
+    }
+    .p-somos{
+        text-align: justify;
+    }
+}
+@media (max-width: 715px) {
+}
+@media (max-width:850px) {
+    .div-somos{
+        top: 6em;
+    }
+    .container-somos{
+        height: 100px;
+    }
+}
