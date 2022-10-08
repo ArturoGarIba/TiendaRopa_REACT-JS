@@ -7,6 +7,7 @@ import reducer from "../reducers/Reducer";
 import initialState from "../reducers/InitialState";
 import { useReducer } from "react";
 import StateContext from "../context/state";
+import Descripcion from '../descripcion/Descripcion';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import InicioView from '../inicio/InicioView';
@@ -30,6 +31,7 @@ function App() {
             <Routes>
               <Route path="/" element={<InicioView />} />
               <Route path="store" element={<Producto />} />
+              <Route path="descripcion" element={<Descripcion />} />
               <Route path="checkout" element={<CheckOut />} />
               <Route path="*" element={<NotFoundView />} />
             </Routes>
