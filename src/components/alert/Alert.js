@@ -5,10 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
-function Alert({ cantidad }) {
+function Alert(props) {
 
   const verify = () => {
-    if (cantidad > 0) {
+    if (props.cantidad > 0) {
       success()
     } else {
       error()
@@ -36,7 +36,7 @@ function Alert({ cantidad }) {
 
   return (
     <>
-      <button type="submit" onClick={verify} className={cx(styles['btn-add'], globalStyles.btn, globalStyles['mb-3'])}>
+      <button onClick={props.onClick} className={cx(styles['btn-add'], globalStyles.btn, globalStyles['mb-3'])}>
         {/* <i className="bi bi-plus-circle"></i> */}
         <i className="bi bi-cart"></i>
         <span className={cx(styles['mar-lef'])}>

@@ -1,35 +1,35 @@
 import actions from "./Actions";
 
 function reducer(state, action) {
-	let prenda, quantity, item, id;
+	let meal, quantity, item, id;
 
 	console.log(action);
 
 	switch (action.type) {
 		case actions.AGREGAR_PRENDA:
-			prenda = action.payload.prenda;
+			meal = action.payload.meal;
 			quantity = action.payload.quantity;
-			item = state.cart.find((c) => c.prenda.id === prenda.id);
+			item = state.cart.find((c) => c.meal.id === meal.id);
 
 			if (!item) {
 				return {
 					...state,
-					cart: [...state.cart, { prenda, quantity }],
+					cart: [...state.cart, { meal, quantity }],
 				};
 			}
 
 			return reducer(state, {
-				type: actions.ACTUALIZAR_PRENDA,
+				type: actions.UPDATE_MEAL,
 				payload: {
-					id: prenda.id,
+					id: meal.id,
 					quantity,
 				},
 			});
 
-		case actions.ACTUALIZAR_PRENDA:
+		case actions.UPDATE_MEAL:
 			id = action.payload.id;
 			quantity = action.payload.quantity;
-			item = state.cart.find((c) => c.prenda.id === id);
+			item = state.cart.find((c) => c.meal.id === id);
 			item.quantity += quantity;
 			return { ...state, cart: [...state.cart] };
 

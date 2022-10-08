@@ -3,42 +3,52 @@ import { useState, useContext, useRef } from "react";
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import Alert from '../alert/Alert';
-import StateContext from "../context/StateContext"
+import StateContext from "../context/state"
+import MenuContext from "../context/menu";
+import actions from "../reducers/Actions";
 // import globalStyles from '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 function PedidosItem(props) {
 
-    const [cantidad, setCantidad] = useState(0);
+   
     const inputs = useRef([]);
-    const prendas = useContext(StateContext);
+	const meals = useContext(MenuContext);
+	const { dispatch } = useContext(StateContext);
+	//const navigate = useNavigate();
+    const [cantidad, setCantidad] = useState(0);
 
     const cambioCantidad = (event) => {
-        setCantidad(event.target.value);
+       setCantidad(event.target.value);
     }
 
     const agregarCarrito = (event) => {
-        event.preventDefault();
-        props.changeCantidad(cantidad);
+     //   event.preventDefault();
+      //  props.changeCantidad(cantidad);
         // setCantidad("");
     }
 
     function agregarPrenda(index){
-        const prenda = prendas[index];
-        const input = inputs.current[index];
+        
+        const meal = meals[index];
+		const input = inputs.current[index];
 
-        if (input.value) {
+        console.log(meal)
+		if (input.value) {
 			dispatch({
-				type: actions.ADD_MEAL,
+				type: actions.AGREGAR_PRENDA,
 				payload: { meal, quantity: parseInt(input.value) },
 			});
-
+            
 			input.value = "";
 		}
-    }
+	 }
+     function goToMeal(id) {
+		//navigate(`/meal/${id}`);
+	}
 
     return (
         <>
-            <form onSubmit={agregarCarrito}>
+            
                 <img src={props.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
                 <div className={cx(globalStyles.div, styles['card-body'])}>
                     <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
@@ -47,15 +57,17 @@ function PedidosItem(props) {
                     <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
                         <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
                             Cantidad
-                            <input type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1" value={cantidad} onChange={cambioCantidad}>
+                            <input 
+                            ref={(el) => (inputs.current[props.index] = el)}
+                            type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min="1" value={cantidad} onChange={cambioCantidad}>
 
                             </input>
                         </div>
-                        <Alert cantidad={cantidad}>       
+                        <Alert onClick={()=> agregarPrenda(props.index)} cantidad={cantidad}>       
                         </Alert>
                     </div>
                 </div>
-            </form>
+            
 
         </>
 
