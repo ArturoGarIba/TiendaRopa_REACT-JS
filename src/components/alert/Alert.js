@@ -15,7 +15,7 @@ function Alert(props) {
         {/* <i className="bi bi-plus-circle"></i> */}
         <i className="bi bi-cart"></i>
         <span className={cx(styles['mar-lef'])}>
-          Agregar al carrito
+          Add to bag
         </span>
       </button>
       <ToastContainer />
