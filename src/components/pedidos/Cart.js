@@ -16,21 +16,21 @@ function Cart(props) {
             <div className={cx(globalStyles.div, globalStyles['d-flex'], styles['container'])}>
                 <div className={styles['div-title']}>
                     <Link to="/">
-                    <img src={logo} height={70} width={180} />
+                        <img src={logo} height={70} width={180} />
                     </Link>
-                </div>
-
-                <Link to="/store" className="btn btn-outline-secondary">TIENDA</Link>
-
-                <div className={styles['div-cart']}>
-
-                    <ModalCart/>
-
                     
                 </div>
 
+
+
+                <Link to="/store" className="btn btn-outline-secondary">GO SHOPPING</Link>
+
+                <div className={styles['div-cart']}>
+                    <ModalCart />
+                </div>
+
             </div>
-            
+
         </React.Fragment>
     );
 }

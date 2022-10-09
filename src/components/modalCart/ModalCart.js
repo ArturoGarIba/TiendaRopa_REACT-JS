@@ -180,13 +180,16 @@ function ModalCart(props) {
           <Button variant="dark" onClick={hideModal}>
             Continuar Comprando
           </Button>
+
           {total > 0 ?
 
         <Link to="/checkout">
+
             <Button variant="success" onClick={hideModal}>
               Ir a Pagar
             </Button>
           </Link>
+
           :
           <Button variant="success" onClick={hideModal}>
               Ir a Pagar
@@ -195,6 +198,7 @@ function ModalCart(props) {
 
           }
           
+
         </Modal.Footer>
       </Modal>
     </>
