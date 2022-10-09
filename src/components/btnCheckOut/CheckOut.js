@@ -5,11 +5,6 @@ import StateContext from '../../components/context/state';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 9f37e8ff1388a18714597a9e4a75cf07660aa299
 function CheckOut(props) {
 
 
