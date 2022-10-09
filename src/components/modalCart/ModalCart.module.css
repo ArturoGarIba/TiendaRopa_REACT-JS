@@ -1,3 +1,76 @@
+table{
+    float: left;
+}
+
+.cart-img-top{
+    width: 20%;
+    height: 7em;
+    vertical-align: text-top !important;
+    float: left !important;
+    margin-right: 10px;
+}
+.cart-modal {
+    /*min-width: 50vw;*/
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart-modal > li {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2c2c2c;
+  }
+  
+  .cart-modal > li:last-child {
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .cart-modal > li:last-child > * {
+    margin-left: 15px;
+  }
+  
+  .cart-item {
+    /*justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;*/
+    margin-top: 20px;
+  }
+  
+  .cart-item > article:nth-child(1) {
+    /*display: flex;
+    flex-direction: column;*/
+  }
+  
+  .cart-item > article:nth-child(1) > h2 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item > article:nth-child(1) > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-item > article:nth-child(1) > div > figure {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin: 0;
+    margin-left: 20px;
+  }
+  
+  .cart-item > article:nth-child(1) > div > figure > h4 {
+    margin: 0;
+  }
+  
+  .cart-item > article:nth-child(2) > * {
+    margin-left: 10px;
+  }
+
 .btn-not {
     background: none;
     border: 0;
@@ -13,8 +86,59 @@
     padding: 15px;
 }
 
+li{
+    list-style: none;
+    list-style-type: none;
+}
+
+h2{
+    font-size: 1.2rem !important;
+}
+
+h3{
+    font-size: 1 rem !important;
+}
+
+h4{
+    font-size: 0.5 rem !important;
+}
+
+h5{
+    text-align: right;
+}
 
 .mar-lr{
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.cell-border{
+    -moz-border-radius: 6px !important;
+    -webkit-border-radius: 6px !important;
+    border-radius: 6px !important;
+    border-collapse:separate !important;
+    /*background: linear-gradient(#0d6efd, #88aade );*/
+    background: linear-gradient(#abcdff, #88aade );
+    color: white;
+    width: 35px;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2px !important;
+}
+
+/*#title{
+    text-align: center !important;
+}*/
+
+/*table{
+    text-align: center;
+}
+*/
+
+/*.numero-en-carrito{
+    width: 5px;
+    height: auto;
+    display: inline-block;
+}*/
