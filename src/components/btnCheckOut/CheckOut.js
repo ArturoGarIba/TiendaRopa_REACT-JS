@@ -1,8 +1,11 @@
-import React, { useContext, Fragment} from 'react';
-import  Button  from 'react-bootstrap/Button';
+
+import React, { useContext } from 'react';
+import Button from 'react-bootstrap/Button';
+import styles from '../../components/modalCart/ModalCart.module.css'
 import StateContext from '../../components/context/state';
 import actions from "../reducers/Actions";
 import { Link } from 'react-router-dom';
+
 import styles from './CheckOut.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
@@ -12,26 +15,11 @@ import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 function CheckOut(props) {
 
     const { state, dispatch } = useContext(StateContext);
-	//const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+    const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalCompra = state.cart.reduce((sum, item) => sum + (item.quantity * item.meal.precio), 0);
 
-    function eliminarTodo() {
-        dispatch({
-            type: actions.ELIMINAR_TODO,
-        });
-    }
 
-    let fR = 0;
-    const addFav = () => {
-        var heart = document.getElementById('btn-heart');
-        if (fR === 0) {
-            fR++;
-            heart.style.color = '#ff0000';
-        } else {
-            heart.style.color = '#ffffff';
-            fR = 0;
-        }
-    }
+
 
     return (
             <>  
@@ -99,8 +87,9 @@ function CheckOut(props) {
                         </Button>
                     </Link>
       
+
         </>
-        
+
     );
 }
 

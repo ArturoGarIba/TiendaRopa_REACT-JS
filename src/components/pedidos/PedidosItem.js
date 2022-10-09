@@ -6,8 +6,10 @@ import Alert from '../alert/Alert';
 import StateContext from "../context/state"
 import MenuContext from "../context/menu";
 import actions from "../reducers/Actions";
+import { useNavigate } from 'react-router-dom';
+
 import { ToastContainer, toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+
 // import globalStyles from '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 function PedidosItem(props) {
@@ -18,7 +20,7 @@ function PedidosItem(props) {
   const { dispatch } = useContext(StateContext);
   //const navigate = useNavigate();
   const [cantidad, setCantidad] = useState(0);
-
+  const navigate = useNavigate();
   const cambioCantidad = (event) => {
 
 
@@ -79,17 +81,18 @@ function PedidosItem(props) {
     }
 
   }
-  function goToMeal(id) {
-    //navigate(`/meal/${id}`);
+  function goToProduct(id) {
+    // console.log(id)
+    navigate(`/descripcion/${id}`)
   }
 
   return (
     <>
       <span className={styles['rel']}>
         <img src={props.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
-        <Link to={"/descripcion"}>
-          <button className={styles['btn-desc']}>DESCRIPCION</button>
-        </Link>
+        {/* <Link to={"/descripcion"}> */}
+          <button className={styles['btn-desc']} onClick={() => goToProduct(props.index)}>DESCRIPCION</button>
+        {/* </Link> */}
         <div className={cx(globalStyles.div, styles['card-body'])}>
           <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
           <p className={cx(globalStyles['card-text'], styles['card-desc'])}>{props.descripcion}</p>

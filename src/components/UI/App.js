@@ -31,7 +31,7 @@ function App() {
             <Routes>
               <Route path="/" element={<InicioView />} />
               <Route path="store" element={<Producto />} />
-              <Route path="descripcion" element={<Descripcion />} />
+              <Route path="/descripcion/:id" element={<Descripcion />} />
               <Route path="checkout" element={<CheckOut />} />
               <Route path="*" element={<NotFoundView />} />
             </Routes>
