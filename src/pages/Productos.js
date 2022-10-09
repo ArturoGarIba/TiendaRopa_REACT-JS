@@ -4,28 +4,29 @@ import MenuContext from "../components/context/menu";
 import styles from '../components/pedidos/Cart.module.css'
 import cx from 'classnames';
 import globalStyles from '../assets/global-styles/bootstrap.min.module.css';
+import useHttp from "../components/hooks/hook";
 
 function Productos() {
 	const [producto, setProducto] = useState([]);
     const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
-	
+    const {isLoading, error, request} = useHttp();
 
     useEffect(() => {
-        const fetchUser = async () => {
-          //const userId = localStorage.getItem("userId");
-          const url = `${BASE_URL}/productos.json?orderBy="$key"`;
-          const response = await fetch(url);
-    
-          if (!response.ok) throw new Error("Algo salió mal :(");
-    
-            const responseData = await response.json();
-            setProducto( [...responseData]);
-            
-        };
-    
-        fetchUser()
-        
-      }, []);
+      const fetchUser = async () => {
+        //const userId = localStorage.getItem("userId");
+        const url = `${BASE_URL}/productos.json?orderBy="$key"`;
+        const responseData = await request({url});
+
+          setProducto( [...responseData]);
+          
+      };
+  
+      fetchUser()
+      
+    }, [request]);
+
+    const loadingMessage = <h2>Cargando...</h2>;
+    const errorMessage = <h2>{error}</h2>;
 
       return (
         <>
@@ -55,9 +56,13 @@ function Productos() {
           <div className={styles['container-somos']}>
           </div>
           <MenuContext.Provider value={producto}>
+          {isLoading && loadingMessage}
+          {error && errorMessage}
             <div className={cx(globalStyles['container-fluid'], globalStyles['my-4'], globalStyles['p-3'])}>
               <div className={cx(globalStyles.div, globalStyles['row'], globalStyles['text-center'])}>
-                <Pedidos />
+              {!isLoading && !error &&
+			      <Pedidos />
+              }
               </div>
             </div>
           </MenuContext.Provider>
