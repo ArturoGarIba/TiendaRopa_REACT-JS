@@ -61,6 +61,16 @@
     justify-content: center;
 }
 
+.btn-talla{
+    color: black !important;
+    border: 5px solid black !important;
+}
+
+.btn-g-tal{
+    display: flex;
+    justify-content: space-between;
+}
+
 .p-coments{
     color: rgb(156, 156, 18);
     font-size: .8em;
