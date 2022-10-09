@@ -24,20 +24,20 @@
     max-width: 100% !important;
 }
 .svg {
-    background-image: url(../../img/xxx.jpg);
+    background-image: url(../../img/city.jpg);
     background-size: cover;
     /* background-image: url(../../img/xx.jpg); */
 }
 .div-somos {
-    background-color: rgb(58, 58, 58, 0.8);
+    background-color: rgba(142, 142, 142, 0.6);
     color: white;
-    width: 70%;
-    border-radius: 15px;
+    width: 80%;
+    border-radius: 5px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    top: 17rem;
+    top: 7rem;
     margin: 0 auto;
     padding: 15px;
     height: fit-content;
