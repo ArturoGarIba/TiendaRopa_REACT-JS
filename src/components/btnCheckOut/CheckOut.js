@@ -7,6 +7,7 @@ import styles from './CheckOut.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
+//
 
 function CheckOut(props) {
 
@@ -33,9 +34,7 @@ function CheckOut(props) {
     }
 
     return (
-        
-            <>
-            
+            <>  
                 {state.cart.map((cartItem) => (
                         <li>
 							<section >
@@ -92,6 +91,8 @@ function CheckOut(props) {
                             Continue shooping
                         </Button>
                     </Link>
+                    
+
                     <Link to="/">
                         <Button variant="primary" onClick={() => eliminarTodo(state.cart)}>
                             Place order
