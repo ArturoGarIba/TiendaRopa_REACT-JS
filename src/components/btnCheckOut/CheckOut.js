@@ -1,13 +1,17 @@
+
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import styles from '../../components/modalCart/ModalCart.module.css'
 import StateContext from '../../components/context/state';
-import cx from 'classnames';
+import actions from "../reducers/Actions";
 import { Link } from 'react-router-dom';
+
+import styles from './CheckOut.module.css'
+import cx from 'classnames';
+import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
 
 function CheckOut(props) {
-
 
     const { state, dispatch } = useContext(StateContext);
     const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -56,6 +60,7 @@ function CheckOut(props) {
                     Pagar
                 </Button>
             </Link>
+
 
 
         </>
