@@ -10,6 +10,7 @@ import styles from './CheckOut.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 
+//
 
 function CheckOut(props) {
 
@@ -21,47 +22,71 @@ function CheckOut(props) {
 
 
     return (
+            <>  
+                {state.cart.map((cartItem) => (
+                        <li>
+							<section >
+								<article>
+                                <div className={cx(globalStyles['container'], styles['bg-otro'])}>
+                                    <div className={cx(globalStyles['row'])}>
+                                        <div className={cx(styles['div-img'], globalStyles['col-md-6'], globalStyles['d-flex'], globalStyles['justify-content-center'])}>
+                                            <div className={cx(globalStyles['col-md-9'], globalStyles['p-2'], globalStyles['m-2'], styles['bg-cont'])}>
+                                           
+                                            <img src={cartItem.meal.url_img} className={styles['ck-guac']} alt="..."></img>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className={cx(styles['div-info'], globalStyles['col-md-6'], globalStyles['d-flex'], globalStyles['justify-content-start'])}>
+                                    <div className={cx(globalStyles['col-md-9'], globalStyles['p-4'], styles['bg-black'], globalStyles['m-3'])}>
+                                        <tr>
+                                            <td>
+                                        <h2>{cartItem.meal.nombre_comida }</h2>
+                                        <div>
+                                        <p className={cx(styles['p-pre'])}>
+                                            <h4>$ {cartItem.meal.precio * cartItem.quantity} MXN</h4>
+                                        </p>
+                                            
+                                            <figure>
+                                                <h4>x {cartItem.quantity}</h4>
+                                            </figure>
+                                            <button id='btn-heart' className={cx(styles['btn-not'])} >
+                                                <i class="fa fa-light fa-heart " > Save for later</i>
+                                                
+                                            </button>
+                                        </div>
+                                        </td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                
+								</article>
+                                     
+							</section>   
+						</li>
+                       
+                               
+					))
+                    }                   
 
+                    <br/>
+                    
+                    <h3>Subtotal: ${totalCompra}</h3> 
+                    <Link to="/store">
+                        <Button variant="danger" >
+                            Continue shooping
+                        </Button>
+                    </Link>
+                    
 
-        <>
-
-            <h1>Detalle de la compra</h1>
-            {state.cart.map((cartItem) => (
-                <li>
-                    <section >
-                        <article>
-                            <img src={cartItem.meal.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
-                            <h2>{cartItem.meal.nombre_comida}</h2>
-                            <div>
-                                <h4>$ {cartItem.meal.precio * cartItem.quantity}</h4>
-                                <figure>
-                                    <h4>x {cartItem.quantity}</h4>
-                                </figure>
-                            </div>
-                        </article>
-
-                    </section>
-                </li>
-            ))
-
-            }
-
-            <br />
-            <h4>Total compra: ${totalCompra}</h4>
-
-            <Link to="/store">
-                <Button variant="danger" >
-                    Continuar Comprando
-                </Button>
-            </Link>
-
-            <Link to="/">
-                <Button variant="primary" >
-                    Pagar
-                </Button>
-            </Link>
-
-
+                    <Link to="/">
+                        <Button variant="primary" onClick={() => eliminarTodo(state.cart)}>
+                            Place order
+                        </Button>
+                    </Link>
+      
 
         </>
 
