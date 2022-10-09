@@ -8,7 +8,7 @@ import initialState from "../reducers/InitialState";
 import { useReducer } from "react";
 import StateContext from "../context/state";
 import Descripcion from '../descripcion/Descripcion';
-
+import RequireItem from '../RequireItem/RequireItem'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import InicioView from '../inicio/InicioView';
 import NotFoundView from "../NotFoundView/NotFoundView";
@@ -32,7 +32,7 @@ function App() {
               <Route path="/" element={<InicioView />} />
               <Route path="store" element={<Producto />} />
               <Route path="/descripcion/:id" element={<Descripcion />} />
-              <Route path="checkout" element={<CheckOut />} />
+              <Route path="checkout" element={<RequireItem><CheckOut /></RequireItem>} />
               <Route path="*" element={<NotFoundView />} />
             </Routes>
       </Router>
