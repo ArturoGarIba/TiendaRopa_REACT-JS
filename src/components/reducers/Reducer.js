@@ -34,18 +34,16 @@ function reducer(state, action) {
 			return { ...state, cart: [...state.cart] };
 
 		case actions.ELIMINAR_PRENDA:
-
             id = action.payload.id;
-
             quantity = action.payload.quantity;
-
             item = state.cart.filter((c) => c.meal.id !== id);
-
             item.id = null;
-
             return { ...state,
-
                 cart: item};
+		
+		case actions.ELIMINAR_TODO:
+            return { ...state,
+                cart: []};
 
 		case actions.OPEN_MODAL:
 			return {

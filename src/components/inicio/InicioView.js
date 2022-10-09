@@ -2,6 +2,7 @@ import styles from './InicioView.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import React, { useContext, useState } from 'react';
+import { Link } from "react-router-dom";
 // import ModalContext from '../context/ModalContext';
 //import ModalCart from '../modalCart/ModalCart'
 function InicioView() {
@@ -23,6 +24,7 @@ function InicioView() {
                         In HEIN we are committed to offer our clients the best products in clothing wih the highest standards of quality at a reasonable price.
                         We hope you can enjoy the experience of buying in our new web page.
                     </p>
+                    <Link to="/store" className="btn btn-outline-dark d-grid gap-2 btn-lg">GO SHOPPING</Link>
                     {/* <p className={styles['p-somos']}>
                         Fashion is the armor to survive the reality of everyday life.
                     </p>

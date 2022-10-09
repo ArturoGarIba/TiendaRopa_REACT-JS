@@ -18,15 +18,15 @@ function Cart(props) {
                     <Link to="/">
                         <img src={logo} height={70} width={180} />
                     </Link>
+                    
                 </div>
 
-                <Link to="/store" className="btn btn-outline-secondary">TIENDA</Link>
+
+
+                <Link to="/store" className="btn btn-outline-secondary">GO SHOPPING</Link>
 
                 <div className={styles['div-cart']}>
-
                     <ModalCart />
-
-
                 </div>
 
             </div>
