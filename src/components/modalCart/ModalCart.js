@@ -9,9 +9,7 @@ import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import { Link } from 'react-router-dom';
 
-
 function ModalCart(props) {
-
 
     const { state, dispatch } = useContext(StateContext);
     const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -44,20 +42,13 @@ function ModalCart(props) {
     }
 
     function eliminar(id) {
-
         dispatch({
-
             type: actions.ELIMINAR_PRENDA,
-
             payload: { id },
-
         });
-
     }
 
     return (
-
-
         <>
             <button className={styles['btn-not']} onClick={showModal}>
                 <i className="bi bi-bag-check-fill"></i>
@@ -70,66 +61,132 @@ function ModalCart(props) {
                 show={state.isOpen}
                 keyboard={false}
                 onHide={hideModal}
+                scrollable={true}
             >
                 <Modal.Header >
                     <Modal.Title>🛒 Mi Carrito</Modal.Title>
                 </Modal.Header>
+                
                 <Modal.Body>
-                    {state.cart.map((cartItem) => (
-                        <li>
-                            <section >
-                                <article>
-                                    <img src={cartItem.meal.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
-                                    <h2>{cartItem.meal.nombre_comida}</h2>
-                                    <div>
-                                        <h4>$ {cartItem.meal.precio * cartItem.quantity}</h4>
-                                        <figure>
-                                            <h4>x {cartItem.quantity}</h4>
-                                        </figure>
-                                    </div>
-                                </article>
-                                <article>
-                                    {cartItem.quantity > 1 ? <Button onClick={() => decrement(cartItem.meal.id)}>-</Button> : <a></a>}
+          <ul className={styles["cart-modal"]}>
+            {state.cart.map((cartItem) => (
+              <li>
+                <section className={styles["cart-item"]}>
+                  <article>
+                    <img
+                      src={cartItem.meal.url_img}
+                      className={cx(styles["cart-img-top"])}
+                      alt="..."
+                    ></img>
 
-                                    <Button
+                    <article>
+                      <h2>{cartItem.meal.nombre_comida}</h2>
+                      <div>
+                        <h3>$ {cartItem.meal.precio}</h3>
+                      </div>
+                    </article>
 
-                                        onClick={() => increment(cartItem.meal.id)}
-                                    >
-                                        +
-                                    </Button>
-                                    <Button
+                    <article>
+                      {cartItem.quantity > 1 ? (
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <Button
+                                  outline
+                                  square
+                                  onClick={() => decrement(cartItem.meal.id)}
+                                >
+                                  <b>
+                                    <font size="3"> - </font>
+                                  </b>
+                                </Button>
+                              </td>
+                              <td className={styles["cell-border"]}>
+                                <h4> {cartItem.quantity}</h4>
+                              </td>
+                              <td>
+                                <Button
+                                  outline
+                                  square
+                                  onClick={() => increment(cartItem.meal.id)}
+                                >
+                                  <b>
+                                    <font size="3"> + </font>
+                                  </b>
+                                </Button>
+                              </td>
 
-                                        onClick={() => eliminar(cartItem.meal.id)}
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      ) : (
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <Button outline square variant="dark">
+                                  <b>
+                                    <font size="3"> - </font>
+                                  </b>
+                                </Button>
+                              </td>
+                              <td className={styles["cell-border"]}>
+                                <h4> {cartItem.quantity}</h4>
+                              </td>
+                              <td>
+                                <Button
+                                  outline
+                                  square
+                                  onClick={() => increment(cartItem.meal.id)}
+                                >
+                                  <b>
+                                    <font size="3"> + </font>
+                                  </b>
+                                </Button>
+                              </td>
 
-                                    >
-
-                                        DELETE
-
-                                    </Button>
-                                </article>
-                            </section>
-                        </li>
-                    ))
-
-                    }
-
-                    <br />
-                    <h4>Total compra: ${totalCompra}</h4>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="danger" onClick={hideModal}>
-                        Continuar Comprando
-                    </Button>
-                    <Link to="/checkout">
-                        <Button variant="primary" onClick={hideModal}>
-                            Ir a Pagar
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      )}
+                      <div class="col d-flex justify-content-end align-items-start">
+                        <Button
+                          variant="danger"
+                          onClick={() => eliminar(cartItem.meal.id)}
+                        >
+                          🗑️ ELIMINAR
                         </Button>
-                    </Link>
-                </Modal.Footer>
-            </Modal>
-        </>
+                      </div>
+                    </article>
+                  </article>
+                </section>
+              </li>
+            ))}
 
-    );
+            <br />
+            <h5>
+              ✔ Total compra:{" "}
+              <b>
+                <font size="6">${totalCompra}</font>
+              </b>
+            </h5>
+          </ul>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="dark" onClick={hideModal}>
+            Continuar Comprando
+          </Button>
+          <Button variant="success" onClick={hideModal}>
+            Ir a Pagar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 }
 
 export default ModalCart;
