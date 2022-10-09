@@ -4,10 +4,7 @@ import StateContext from '../../components/context/state';
 import actions from "../reducers/Actions";
 import { Link } from 'react-router-dom';
 
-import styles from './CheckOut.module.css'
-import cx from 'classnames';
-import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
-//
+
 
 function CheckOut(props) {
     const { state, dispatch } = useContext(StateContext);
