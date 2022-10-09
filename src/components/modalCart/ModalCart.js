@@ -1,73 +1,73 @@
-import Modal from 'react-bootstrap/Modal';
-import ModalContext from '../context/ModalContext';
-import React, { useContext } from 'react';
-import Button from 'react-bootstrap/Button';
-import styles from './ModalCart.module.css'
+import Modal from "react-bootstrap/Modal";
+import ModalContext from "../context/ModalContext";
+import React, { useContext } from "react";
+import Button from "react-bootstrap/Button";
+import styles from "./ModalCart.module.css";
 import actions from "../reducers/Actions";
-import StateContext from '../context/state';
-import cx from 'classnames';
-import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
-import { Link } from 'react-router-dom';
+import StateContext from "../context/state";
+import cx from "classnames";
+import globalStyles from "../../assets/global-styles/bootstrap.min.module.css";
+import { Link } from "react-router-dom";
 
 function ModalCart(props) {
+  const { state, dispatch } = useContext(StateContext);
+  const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalCompra = state.cart.reduce(
+    (sum, item) => sum + item.quantity * item.meal.precio,
+    0
+  );
 
-    const { state, dispatch } = useContext(StateContext);
-    const total = state.cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalCompra = state.cart.reduce((sum, item) => sum + (item.quantity * item.meal.precio), 0);
+  const showModal = () => {
+    dispatch({
+      type: actions.OPEN_MODAL,
+    });
+  };
 
-    const showModal = () => {
-        dispatch({
-            type: actions.OPEN_MODAL,
-        });
-    }
+  const hideModal = () => {
+    dispatch({
+      type: actions.CLOSE_MODAL,
+    });
+  };
 
-    const hideModal = () => {
-        dispatch({
-            type: actions.CLOSE_MODAL,
-        });
-    }
+  function increment(id) {
+    dispatch({
+      type: actions.UPDATE_MEAL,
+      payload: { id, quantity: 1 },
+    });
+  }
 
-    function increment(id) {
-        dispatch({
-            type: actions.UPDATE_MEAL,
-            payload: { id, quantity: 1 },
-        });
-    }
+  function decrement(id) {
+    dispatch({
+      type: actions.UPDATE_MEAL,
+      payload: { id, quantity: -1 },
+    });
+  }
 
-    function decrement(id) {
-        dispatch({
-            type: actions.UPDATE_MEAL,
-            payload: { id, quantity: -1 },
-        });
-    }
+  function eliminar(id) {
+    dispatch({
+      type: actions.ELIMINAR_PRENDA,
+      payload: { id },
+    });
+  }
 
-    function eliminar(id) {
-        dispatch({
-            type: actions.ELIMINAR_PRENDA,
-            payload: { id },
-        });
-    }
+  return (
+    <>
+      <button className={styles["btn-not"]} onClick={showModal}>
+        <i className="bi bi-bag-check-fill"></i>
+        <span className={styles["mar-lr"]}>Carrito</span>
+        <span className="badge bg-primary">{total}</span>
+      </button>
+      <Modal
+        show={state.isOpen}
+        keyboard={false}
+        onHide={hideModal}
+        scrollable={true}
+      >
+        <Modal.Header>
+          <Modal.Title>🛒 Mi Carrito</Modal.Title>
+        </Modal.Header>
 
-    return (
-        <>
-            <button className={styles['btn-not']} onClick={showModal}>
-                <i className="bi bi-bag-check-fill"></i>
-                <span className={styles['mar-lr']}>
-                    Carrito
-                </span>
-                <span className="badge bg-primary">{total}</span>
-            </button>
-            <Modal
-                show={state.isOpen}
-                keyboard={false}
-                onHide={hideModal}
-                scrollable={true}
-            >
-                <Modal.Header >
-                    <Modal.Title>🛒 Mi Carrito</Modal.Title>
-                </Modal.Header>
-                
-                <Modal.Body>
+        <Modal.Body>
           <ul className={styles["cart-modal"]}>
             {state.cart.map((cartItem) => (
               <li>
@@ -180,9 +180,11 @@ function ModalCart(props) {
           <Button variant="dark" onClick={hideModal}>
             Continuar Comprando
           </Button>
-          <Button variant="success" onClick={hideModal}>
-            Ir a Pagar
-          </Button>
+          <Link to="/checkout">
+            <Button variant="success" onClick={hideModal}>
+              Ir a Pagar
+            </Button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>
