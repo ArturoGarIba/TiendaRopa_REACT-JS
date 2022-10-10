@@ -8,6 +8,7 @@
     filter: blur(5);
     height: fit-content;
     /* margin-left: auto; */
+    
 }
 
 .btn-go, .btn-go2{
@@ -16,7 +17,10 @@
     margin-left: auto;
 }
 
-.btn-go2{margin-right: 10px;}
+.btn-go2{
+    margin-right: 10px;
+    
+}
 
 .div-title {
     width: 80%;
@@ -28,7 +32,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
 
 .container {
     background-color: black;
@@ -48,6 +51,7 @@
 
 .div-somos {
     background-color: rgb(58, 58, 58, 0.8);
+    text-shadow: 2px 2px 3px #443F3F;
     color: white;
     width: 70%;
     border-radius: 15px;
@@ -55,7 +59,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    top: 17rem;
+    top: 15em;
     margin: 0 auto;
     padding: 15px;
     height: fit-content;
@@ -74,13 +78,18 @@
 
 
 .h2-somos{
-    font-size: 2em;
+    font-size: 2.3em;
     text-align: center;
+    font-style: italic;
+    font-style: bold;
+    text-shadow: 2px 2px 3px #443F3F;
 }
 
 .p-somos{
     font-size: 1.3em;
     text-align: center;
+    font-style: italic;
+    text-shadow: 2px 2px 3px #443F3F;
 }
 
 .btn-not {
@@ -122,16 +131,21 @@
     }
 }
 
-@media (max-width: 715px) {
-    
-}
 
-@media (max-width:850px) {
+@media (max-width:890px) {
     .div-somos{
-        top: 6em;
+        top: 10em;
+        font-size: 0.8em;
     }
     .container-somos{
         height: 100px;
+    }
+}
+
+@media (max-width: 620px) {
+    .div-somos{
+        top: 8em;
+        font-size: 0.6em;
     }
 }
 

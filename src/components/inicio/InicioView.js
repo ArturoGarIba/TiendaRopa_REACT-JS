@@ -3,15 +3,16 @@ import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import React, { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
-import img1 from '../../img/187.jpg'
+import img1 from '../../img/img1.jpg'
 import info1 from '../../img/info1.gif'
 import info2 from '../../img/info2.gif'
-import info3 from '../../img/info3.webp'
+import info3 from '../../img/info3.gif'
 import ropa1 from '../../img/ropa1.jpg'
 import ropa2 from '../../img/ropa2.jpg'
 import ropa3 from '../../img/ropa3.jpg'
 // import ModalContext from '../context/ModalContext';
 //import ModalCart from '../modalCart/ModalCart'
+
 function InicioView() {
     return (
         <React.Fragment>
@@ -28,15 +29,19 @@ function InicioView() {
                 </svg>
                 <div data-testid="mono" className={styles['div-somos'] }>
                     <p className={styles['h2-somos']}>
-                        In HEIN we are committed to offer our clients the best products in clothing wih the highest standards of quality at a reasonable price.
-                        We hope you can enjoy the experience of buying in our new web page.
+                        "In HEIN we are committed to offer our clients the best products in clothing wih the highest standards of quality at a reasonable price.
+                        We hope you can enjoy the experience of buying in our new web page."
                     </p>
-                    <Link data-testid="link-ini01" to="/store" className={cx(globalStyles['btn'], styles['btn-dark'])}>GO SHOPPING</Link>
+
+
+                    <Link data-testid="link-ini01" to="/store" className={cx(globalStyles['btn'], styles['btn-dark'])}>🛍 GO SHOPPING 🛍</Link>
+
+
                     {/* <p className={styles['p-somos']}>
                         Fashion is the armor to survive the reality of everyday life.
                     </p>
                     <p className={styles['p-somos']}>
-                        Athleisure + Bottoms + Hoodies + Jackets =  ***
+                        Athleisure + Bottoms + Hoodies + Jackets =  ⭐⭐⭐⭐⭐
                     </p> */}
                 </div>
             </div>
@@ -63,11 +68,11 @@ function InicioView() {
 
                 <div className={cx(globalStyles['container'], globalStyles['mt-3'], globalStyles['p-0'], globalStyles['text-center'])}>
                     <p className={styles['p-subtitle']}>
-                        LA MEJOR CALIDAD Y DISENO LA ENCONTRARAS AQUI
+                        HERE YOU'LL FIND THE BEST QUALITY AND DESIGN
                     </p>
                     <div className={cx(globalStyles['row'])}>
 
-                        <div class={cx(globalStyles['col-md-4'], globalStyles['p-0'])} >
+                        <div class={cx(globalStyles['col-md-4'])} >
                             <img src={ropa1} className={cx(styles['img-1'])}></img>
                         </div>
                         <div class="col-md-4">
