@@ -90,8 +90,8 @@ function PedidosItem(props) {
         <button className={styles['btn-desc']} onClick={() => goToProduct(props.index)}>DESCRIPCION</button>
         {/* </Link> */}
         <div className={cx(globalStyles.div, styles['card-body'])}>
-          <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
-          <p className={cx(globalStyles['card-text'], styles['card-desc'])}>{props.descripcion}</p>
+          <h5 className={cx(globalStyles['card-title'], globalStyles['text-center'])}>{props.nombre_comida}</h5>
+          <p className={cx(globalStyles['card-text'], globalStyles['text-center'])}>{props.descripcion}</p>
           <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>MXN ${props.precio}</p>
           <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
             <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
