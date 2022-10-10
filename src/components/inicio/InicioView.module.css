@@ -66,6 +66,8 @@
 .h2-somos{
     font-size: 2em;
     text-align: center;
+    text-shadow: 2px 2px 3px #443F3F;
+    font-style:italic;
 }
 .p-somos{
     font-size: 1.3em;

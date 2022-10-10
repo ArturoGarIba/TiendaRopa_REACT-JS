@@ -81,12 +81,12 @@ function CheckOut(props) {
             ))}
 
             <br />
-            <h5>
-              ✔ Total compra:{" "}
+            <div className={styles["totalpurchase"]}>
+              ✔ Total purchase:{" "}
               <b>
-                <font size="6">${totalCompra}</font>
-              </b>
-            </h5>
+                <font size="6.5">${totalCompra}</font> 
+              </b> MXN
+            </div>
           </ul>
 
           <br />

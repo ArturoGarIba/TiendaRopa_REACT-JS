@@ -28,10 +28,12 @@ function InicioView() {
                 </svg>
                 <div className={styles['div-somos']}>
                     <p className={styles['h2-somos']}>
-                        In HEIN we are committed to offer our clients the best products in clothing wih the highest standards of quality at a reasonable price.
-                        We hope you can enjoy the experience of buying in our new web page.
+                        "In HEIN we are committed to offer our clients the best products in clothing wih the highest standards of quality at a reasonable price.
+                        We hope you can enjoy the experience of buying in our new web page."
                     </p>
-                    <Link to="/store" className={cx(globalStyles['btn'], styles['btn-dark'])}>GO SHOPPING</Link>
+
+                    <Link to="/store" className="btn btn-dark d-grid gap-2 btn-lg">🛍 GO SHOPPING 🛍</Link>
+
                     {/* <p className={styles['p-somos']}>
                         Fashion is the armor to survive the reality of everyday life.
                     </p>
