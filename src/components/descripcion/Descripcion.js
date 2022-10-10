@@ -38,8 +38,10 @@ function Descripcion() {
 
             const responseData = await response.json();
             setProducto(Object.values(responseData)[0]);
+            
         };
         fetchUser()
+        console.log(producto)
     }, []);
 
 
@@ -63,7 +65,6 @@ function Descripcion() {
       };
 
     return (
-
             <Fragment>
                 <div className={cx(globalStyles['container'], styles['bg-otro'])}>
                     <div className={cx(globalStyles['row'])}>
