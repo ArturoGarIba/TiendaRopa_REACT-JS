@@ -3,9 +3,11 @@ import  Button  from 'react-bootstrap/Button';
 import StateContext from '../../components/context/state';
 import actions from "../reducers/Actions";
 import { Link } from 'react-router-dom';
-import cx from 'classnames';
-import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
-import styles from './CheckOut.module.css'
+import styles from "../modalCart/ModalCart.module.css";
+import cx from "classnames";
+import globalStyles from "../../assets/global-styles/bootstrap.min.module.css";
+
+
 
 
 function CheckOut(props) {
