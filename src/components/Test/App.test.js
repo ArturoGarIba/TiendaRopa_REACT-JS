@@ -19,12 +19,6 @@ describe("App component", () => {
     expect(screen.getByText(/Your best option in terms of design/i)).toBeInTheDocument
   });
   //afterEach(cleanup);
-  test("renders nav image", () => {
-    const image = screen.getByTestId("ImageNav");
-    expect(image).toBeInTheDocument;
-    //expect(input).toHaveValue("");
-    //userEvent.type(input, expectedValue);
-    //expect(input).toHaveValue(expectedValue);
-  });
+ 
   
 });

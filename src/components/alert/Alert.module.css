@@ -17,11 +17,11 @@
 
 .btn-add:hover{
     background-color: white !important;
-    color: #229954 !important;
+    color: black !important;
 }
 
 .btn-add:active{
-    border: 1px solid #229954!important;
+    border: 1px solid black!important;
 }
 
 .mar-lef{
