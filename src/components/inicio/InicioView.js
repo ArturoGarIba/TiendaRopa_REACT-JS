@@ -3,10 +3,10 @@ import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import React, { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
-import img1 from '../../img/187.jpg'
+import img1 from '../../img/img1.jpg'
 import info1 from '../../img/info1.gif'
 import info2 from '../../img/info2.gif'
-import info3 from '../../img/info3.webp'
+import info3 from '../../img/info3.gif'
 import ropa1 from '../../img/ropa1.jpg'
 import ropa2 from '../../img/ropa2.jpg'
 import ropa3 from '../../img/ropa3.jpg'
