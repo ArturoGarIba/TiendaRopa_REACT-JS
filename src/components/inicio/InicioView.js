@@ -65,7 +65,7 @@ function InicioView() {
 
                 <div className={cx(globalStyles['container'], globalStyles['mt-3'], globalStyles['p-0'], globalStyles['text-center'])}>
                     <p className={styles['p-subtitle']}>
-                        LA MEJOR CALIDAD Y DISENO LA ENCONTRARAS AQUI
+                        HERE YOU'LL FIND THE BEST QUALITY AND DESIGN
                     </p>
                     <div className={cx(globalStyles['row'])}>
 
