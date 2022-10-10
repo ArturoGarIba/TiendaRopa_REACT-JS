@@ -33,10 +33,15 @@
 }
 
 .card-body{
-    text-align: center;
-    margin-left: 1em;
+    text-align: center !important;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
     /* background-color: rgb(116, 196, 189); padding: 10px; */
     /* color: white; */
+}
+
+.card-title{
+    font-size: 2em !important;
 }
 
 .card-desc{
