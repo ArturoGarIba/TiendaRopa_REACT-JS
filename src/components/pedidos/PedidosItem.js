@@ -8,7 +8,7 @@ import MenuContext from "../context/menu";
 import actions from "../reducers/Actions";
 import { useNavigate } from 'react-router-dom';
 
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 // import globalStyles from '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
@@ -42,7 +42,7 @@ function PedidosItem(props) {
   const success = () => {
     setTimeout(() => {
       toast.success('Producto agregado correctamente', {
-        // position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 2000,
         className: styles['msj-success']
       });
@@ -52,7 +52,7 @@ function PedidosItem(props) {
   const error = () => {
     setTimeout(() => {
       toast.error(`Debes ingresar al menos un producto para agregar al carrito`, {
-        // position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 2000,
         className: cx(styles['msj-error'])
       });

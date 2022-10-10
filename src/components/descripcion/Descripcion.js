@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import MenuContext from '../context/menu';
 import actions from "../reducers/Actions";
 import StateContext from '../context/state';
+import Alert from '../alert/AlertDesc'
+import {  toast } from 'react-toastify';
 
 function Descripcion() {
     let fR = 0;
@@ -42,15 +44,23 @@ function Descripcion() {
 
 
     function agregarPrenda() {
-        // console.log(producto.id)
-        // console.log(meals)
         const meal = meals[id];
+        success()
         dispatch({
             type: actions.AGREGAR_PRENDA,
             payload: { meal, quantity: parseInt("1") },
         });
-
+        
     }
+    const success = () => {
+        setTimeout(() => {
+          toast.success('Producto agregado correctamente', {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            autoClose: 2000,
+            className: styles['msj-success']
+          });
+        }, 0);
+      };
 
     return (
 
@@ -113,9 +123,12 @@ function Descripcion() {
                                 </div>
 
                                 <div className={cx(globalStyles['d-flex'], globalStyles['justify-content-between'])}>
-                                    <button className={cx(globalStyles['btn'], styles['btn-add'])} onClick={agregarPrenda}>
+                                    {/* <button className={cx(globalStyles['btn'], styles['btn-add'])} onClick={agregarPrenda}>
                                         ANADIR AL CARRITO
-                                    </button>
+                                    </button> */}
+                                    <Alert onClick={() => agregarPrenda()}>
+
+                                    </Alert>
                                     <button id='btn-heart' className={cx(styles['btn-not'])} onClick={addFav}>
                                         <i className="fa fa-light fa-heart fa-2x"></i>
                                     </button>
