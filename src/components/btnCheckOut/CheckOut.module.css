@@ -49,8 +49,9 @@ h1{
     text-align: center !important;
 }
 
-h5{
+.totalpurchase{
     text-align: center;
+    font-size: 1.7em;
 }
 
 h6{
