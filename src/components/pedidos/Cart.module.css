@@ -8,6 +8,7 @@
     filter: blur(5);
     height: fit-content;
     /* margin-left: auto; */
+    
 }
 
 .btn-go, .btn-go2{
@@ -16,7 +17,10 @@
     margin-left: auto;
 }
 
-.btn-go2{margin-right: 10px;}
+.btn-go2{
+    margin-right: 10px;
+    
+}
 
 .div-title {
     width: 80%;

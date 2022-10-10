@@ -17,6 +17,10 @@
     width: 30%;
 }
 
+.btn-go{
+    width: fit-content;
+}
+
 .btn-dark:hover{
     background: rgb(48, 48, 48);
 }

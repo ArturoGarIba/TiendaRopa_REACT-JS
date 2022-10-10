@@ -32,7 +32,7 @@ function InicioView() {
                         We hope you can enjoy the experience of buying in our new web page."
                     </p>
 
-                    <Link to="/store" className="btn btn-dark d-grid gap-2 btn-lg">🛍 GO SHOPPING 🛍</Link>
+                    <Link to="/store" className={cx(globalStyles['btn'], styles['btn-dark'])}>🛍 GO SHOPPING 🛍</Link>
 
                     {/* <p className={styles['p-somos']}>
                         Fashion is the armor to survive the reality of everyday life.
