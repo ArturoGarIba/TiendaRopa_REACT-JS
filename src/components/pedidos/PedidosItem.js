@@ -7,13 +7,9 @@ import StateContext from "../context/state"
 import MenuContext from "../context/menu";
 import actions from "../reducers/Actions";
 import { useNavigate } from 'react-router-dom';
-
 import {  toast } from 'react-toastify';
 
-// import globalStyles from '../../../node_modules/bootstrap/dist/css/bootstrap.css'
-
 function PedidosItem(props) {
-
 
   const inputs = useRef([]);
   const meals = useContext(MenuContext);
@@ -21,15 +17,9 @@ function PedidosItem(props) {
   //const navigate = useNavigate();
   const [cantidad, setCantidad] = useState(0);
   const navigate = useNavigate();
-  const cambioCantidad = (event) => {
-
-
-    setCantidad(event.target.value);
-  }
-
-  const agregarCarrito = (event) => {
-
-  }
+  const cambioCantidad = (event) => { setCantidad(event.target.value) };
+  const agregarCarrito = (event) => {  }
+  
   const verify = () => {
     if (cantidad > 0) {
 
@@ -39,9 +29,10 @@ function PedidosItem(props) {
       error()
     }
   }
+
   const success = () => {
     setTimeout(() => {
-      toast.success('Producto agregado correctamente', {
+      toast.success('Succesfully added!', {
         position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 2000,
         className: styles['msj-success']
@@ -51,7 +42,7 @@ function PedidosItem(props) {
 
   const error = () => {
     setTimeout(() => {
-      toast.error(`Debes ingresar al menos un producto para agregar al carrito`, {
+      toast.error(`You must add at least one item to your cart.`, {
         position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 2000,
         className: cx(styles['msj-error'])
@@ -62,8 +53,11 @@ function PedidosItem(props) {
   function agregarPrenda(index) {
     const meal = meals[index];
     const input = inputs.current[index];
-    console.log(meal)
-    verify()
+
+    console.log(meal);
+
+    verify();
+    
     if (input.value > 0) {
       dispatch({
         type: actions.AGREGAR_PRENDA,
@@ -87,25 +81,22 @@ function PedidosItem(props) {
       <span className={styles['rel']}>
         <img src={props.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
         {/* <Link to={"/descripcion"}> */}
-        <button className={styles['btn-desc']} onClick={() => goToProduct(props.index)}>DESCRIPCION</button>
+        <button className={styles['btn-desc']} onClick={() => goToProduct(props.index)}>DESCRIPTION</button>
         {/* </Link> */}
         <div className={cx(globalStyles.div, styles['card-body'])}>
-          <h5 className={cx(globalStyles['card-title'], globalStyles['text-center'])}>{props.nombre_comida}</h5>
+          <font size="5"><b><p className={cx(globalStyles['card-title'], globalStyles['text-center'])}>{props.nombre_comida}</p></b></font>
           <p className={cx(globalStyles['card-text'], globalStyles['text-center'])}>{props.descripcion}</p>
-          <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>MXN ${props.precio}</p>
+          <p className={cx(globalStyles['card-text'], globalStyles['fw-bold'])}>${props.precio} MXN</p>
           <div className={cx(globalStyles.div, globalStyles['card-footer'], globalStyles['text-center'])}>
             <div className={cx(globalStyles.div, globalStyles['ml-auto'])}>
-              Cantidad
+              Quantity
 
               <input
                 ref={(el) => (inputs.current[props.index] = el)}
                 type="number" className={cx(globalStyles.input, globalStyles['mb-3'], globalStyles['col-sm-5'], styles['inp-cant'])} min={1} value={cantidad} onChange={cambioCantidad}>
-
               </input>
             </div>
-            <Alert onClick={() => agregarPrenda(props.index)}>
-
-            </Alert>
+            <Alert onClick={() => agregarPrenda(props.index)}> </Alert>
           </div>
         </div>
       </span>

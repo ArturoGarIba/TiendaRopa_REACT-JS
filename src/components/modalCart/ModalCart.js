@@ -53,10 +53,11 @@ function ModalCart(props) {
   return (
     <>
       <button className={styles["btn-not"]} onClick={showModal}>
-        <i className="bi bi-bag-check-fill"></i>
-        <span className={styles["mar-lr"]}>Carrito</span>
+        <i className="bi bi-bag-check-fill"></i> 
+         <span className={styles["mar-lr"]}>Cart</span>
         <span className="badge bg-primary">{total}</span>
       </button>
+
       <Modal
         show={state.isOpen}
         keyboard={false}
@@ -64,7 +65,7 @@ function ModalCart(props) {
         scrollable={true}
       >
         <Modal.Header>
-          <Modal.Title>🛒 Mi Carrito</Modal.Title>
+          <Modal.Title>🛒 My Cart</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -82,7 +83,7 @@ function ModalCart(props) {
                     <article>
                       <h2>{cartItem.meal.nombre_comida}</h2>
                       <div>
-                        <h3>$ {cartItem.meal.precio}</h3>
+                        <h3>$ {cartItem.meal.precio} <font size="2">MXN</font></h3>
                       </div>
                     </article>
 
@@ -157,7 +158,7 @@ function ModalCart(props) {
                           variant="danger"
                           onClick={() => eliminar(cartItem.meal.id)}
                         >
-                          🗑️ ELIMINAR
+                          🗑️ DELETE
                         </Button>
                       </div>
                     </article>
@@ -168,9 +169,9 @@ function ModalCart(props) {
 
             <br />
             <h5>
-              ✔ Total compra:{" "}
+              ✔ Total pruchase:{" "}
               <b>
-                <font size="6">${totalCompra}</font>
+                <font size="6">${totalCompra}</font> MXN
               </b>
             </h5>
           </ul>
@@ -178,7 +179,7 @@ function ModalCart(props) {
 
         <Modal.Footer>
           <Button variant="dark" onClick={hideModal}>
-            Continuar Comprando
+            Continue shipping
           </Button>
 
           {total > 0 ?
@@ -186,13 +187,13 @@ function ModalCart(props) {
         <Link to="/checkout">
 
             <Button variant="success" onClick={hideModal}>
-              Ir a Pagar
+              Pay
             </Button>
           </Link>
 
           :
           <Button variant="success" onClick={hideModal}>
-              Ir a Pagar
+              Pay
             </Button>
 
 

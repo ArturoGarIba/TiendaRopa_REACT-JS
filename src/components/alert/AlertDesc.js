@@ -15,7 +15,7 @@ function AlertDesc(props) {
         {/* <i className="bi bi-plus-circle"></i> */}
         <i className="bi bi-cart"></i>
         <span className={cx(cx(globalStyles['btn'], styles['btn-add']))}>
-          Add to bag
+          Add to cart
         </span>
       </button>
       <ToastContainer />
