@@ -24,6 +24,7 @@
 .btn-dark:hover {
   background: rgb(48, 48, 48);
 }
+
 .div-title {
   width: 80%;
   padding: 20px;
@@ -31,6 +32,7 @@
   font-size: 2em;
   font-weight: bold;
 }
+
 .container {
   background-color: black;
   /* background-image: url(../../img/fondo.jpg); */
@@ -38,6 +40,7 @@
   align-items: center;
   max-width: 100% !important;
 }
+
 .svg {
   background-image: url(../../img/city.jpg);
   background-size: cover;
@@ -45,6 +48,7 @@
   margin-top: 0;
   /* background-image: url(../../img/xx.jpg); */
 }
+
 .div-somos {
   background-color: rgba(142, 142, 142, 0.6);
   color: white;
@@ -61,25 +65,30 @@
   height: fit-content;
   text-align: center;
 }
+
 .relative {
   position: relative;
 }
+
 .container-somos {
   /* display: flex;
     justify-content: center;
     position: relative top; */
   /* position: relative; */
 }
+
 .h2-somos {
   font-size: 2em;
   text-align: center;
   text-shadow: 2px 2px 3px #443f3f;
   font-style: italic;
 }
+
 .p-somos {
   font-size: 1.3em;
   text-align: center;
 }
+
 .btn-not {
   background: none;
   border: 0;

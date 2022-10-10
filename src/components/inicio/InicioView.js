@@ -12,6 +12,7 @@ import ropa2 from '../../img/ropa2.jpg'
 import ropa3 from '../../img/ropa3.jpg'
 // import ModalContext from '../context/ModalContext';
 //import ModalCart from '../modalCart/ModalCart'
+
 function InicioView() {
     return (
         <React.Fragment>
