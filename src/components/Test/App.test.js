@@ -1,58 +1,38 @@
-import { render, screen } from "@testing-library/react";
-import Producto from '../../pages/Productos';
-import StateContext from "../context/state";
-import { act } from "react-dom/test-utils";
-import userEvent from "@testing-library/user-event";
-import {BrowserRouter, MemoryRouter} from 'react-router-dom'
-import ReactDOM from "react-dom";
-import App from '../UI/App'
+import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from '@testing-library/user-event'
+import App from "./../UI/App.js";
 
 
+describe("App component", () => {
+  beforeEach(() => render(<App />));
 
-// Mock de toda la biblioteca "react-router-dom"
-jest.mock("react-router-dom", () => ({
-	...jest.requireActual("react-router-dom"),
-	useNavigate: jest.fn(),
-}));
+  test("renders home link to catalogue", () => {
+    const link = screen.getByTestId("mono");
+    expect(link).toBeInTheDocument;
+  });
 
-describe("App", () => {
-	let dispatch;
-	let container;
+  test("renders home image", () => {
+	
+    const image = screen.getByTestId("imag-ini01");
+    expect(image).toBeInTheDocument;
+    //expect(input).toHaveValue("");
 
-	beforeEach(async () => {
-		jest.fn();
-		window.fetch = jest.fn();
-		
-		dispatch = jest.fn();
+    //userEvent.type(input, expectedValue);
+    //expect(input).toHaveValue(expectedValue);
+  });
 
-		window.fetch.mockResolvedValueOnce({
-			json: async () => [
-                {
-                    descripcion: "Men Thermal Lined Sweatshirt",
-                    id: 1,
-                    nombre_comida: "Men Sweatshirts",
-                    precio: 600,
-                    url_img: "../../img/Hoodies/5.JPG"
-                }
-			],
-			ok: true,
-		});
+  test("link GO SHOPPING with href to  /store", () => {
+    const link = screen.getByTestId('link-ini01');
+    expect(link).toBeInTheDocument;
+	
+	fireEvent.click(link)
+	
+	expect(screen.getByText(/Your best option in terms of design/i)).toBeInTheDocument
+	
+  });
 
-		const rendered = await act(async () =>
-			render(
-						<App />	
-			)
-		);
 
-		container = rendered.container;
-	});
-
-	it("should render", async () => {
-		const Container = container.querySelector("producto");
-		expect(Container).toBeInTheDocument;
-	});
-
-    
-
-});
+  
+  //afterEach(cleanup);
  
+});
