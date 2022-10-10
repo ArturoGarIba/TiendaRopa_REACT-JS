@@ -2,10 +2,12 @@ import styles from './Descripcion.module.css'
 import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import React, { Fragment, useContext, useEffect, useState } from 'react';
-import img from '../../img/ropa.jpg'
 import { useParams } from 'react-router-dom';
-import StateContext from '../context/state';
 import MenuContext from '../context/menu';
+import actions from "../reducers/Actions";
+import StateContext from '../context/state';
+import Alert from '../alert/AlertDesc'
+import {  toast } from 'react-toastify';
 
 function Descripcion() {
     let fR = 0;
@@ -21,15 +23,14 @@ function Descripcion() {
     }
 
     const { id } = useParams();
-    const { dispatch, state } = useContext(StateContext);
     const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
     const [producto, setProducto] = useState([]);
-
+    const meals = useContext(MenuContext);
+    const { dispatch } = useContext(StateContext);
 
     useEffect(() => {
 
         const fetchUser = async () => {
-            //const userId = localStorage.getItem("userId");
             const url = `${BASE_URL}/productos.json?orderBy="$key"&equalTo="${id}"`;
             const response = await fetch(url);
 
@@ -37,10 +38,29 @@ function Descripcion() {
 
             const responseData = await response.json();
             setProducto(Object.values(responseData)[0]);
-            // console.log(precio)
         };
         fetchUser()
     }, []);
+
+
+    function agregarPrenda() {
+        const meal = meals[id];
+        success()
+        dispatch({
+            type: actions.AGREGAR_PRENDA,
+            payload: { meal, quantity: parseInt("1") },
+        });
+        
+    }
+    const success = () => {
+        setTimeout(() => {
+          toast.success('Producto agregado correctamente', {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            autoClose: 2000,
+            className: styles['msj-success']
+          });
+        }, 0);
+      };
 
     return (
 
@@ -62,7 +82,7 @@ function Descripcion() {
                                 </p>
                                 <p className={styles['clasificacion']}>
 
-                                    <input id="radio1" type="radio" name="estrellas" value="5" checked={true} />
+                                    <input id="radio1" type="radio" name="estrellas" value="5" />
                                     <label for="radio1">★</label>
                                     <input id="radio2" type="radio" name="estrellas" value="4" />
                                     <label for="radio2">★</label>
@@ -81,10 +101,34 @@ function Descripcion() {
                                 <p>
                                     <b>Color</b>: Negro Pasion
                                 </p>
+
+                                <p>
+                                    <b>
+                                        Tallas:
+                                    </b>
+                                </p>
+
+                                <div className={cx(globalStyles["btn-group"], globalStyles['mb-3'], styles['btn-g-tal'])} role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" className="btn-check btn-talla" name="btnradio" id="btnradio1" autoComplete="off" />
+                                    <label className="btn btn-talla" for="btnradio1">XS</label>
+
+                                    <input type="radio" className="btn-check btn-talla" name="btnradio" id="btnradio2" autoComplete="off" />
+                                    <label className="btn btn-talla" for="btnradio2">S</label>
+
+                                    <input type="radio" className="btn-check btn-talla" name="btnradio" id="btnradio3" autoComplete="off" />
+                                    <label className="btn btn-talla" for="btnradio3">M</label>
+
+                                    <input type="radio" className="btn-check btn-talla" name="btnradio" id="btnradio4" autoComplete="off" />
+                                    <label className="btn btn-talla" for="btnradio4">L</label>
+                                </div>
+
                                 <div className={cx(globalStyles['d-flex'], globalStyles['justify-content-between'])}>
-                                    <button className={cx(globalStyles['btn'], styles['btn-add'])}>
+                                    {/* <button className={cx(globalStyles['btn'], styles['btn-add'])} onClick={agregarPrenda}>
                                         ANADIR AL CARRITO
-                                    </button>
+                                    </button> */}
+                                    <Alert onClick={() => agregarPrenda()}>
+
+                                    </Alert>
                                     <button id='btn-heart' className={cx(styles['btn-not'])} onClick={addFav}>
                                         <i className="fa fa-light fa-heart fa-2x"></i>
                                     </button>
