@@ -60,27 +60,23 @@ function PedidosItem(props) {
   }
 
   function agregarPrenda(index) {
-
     const meal = meals[index];
-
     const input = inputs.current[index];
+    console.log(meal)
     verify()
     if (input.value > 0) {
       dispatch({
         type: actions.AGREGAR_PRENDA,
         payload: { meal, quantity: parseInt(input.value) },
       }
-
-
       );
-
       input.value = "0";
       setCantidad(input.value);
     } else {
       input.value = "0";
     }
-
   }
+
   function goToProduct(id) {
     // console.log(id)
     navigate(`/descripcion/${id}`)
@@ -91,7 +87,7 @@ function PedidosItem(props) {
       <span className={styles['rel']}>
         <img src={props.url_img} className={cx(styles['card-img-top'])} alt="..."></img>
         {/* <Link to={"/descripcion"}> */}
-          <button className={styles['btn-desc']} onClick={() => goToProduct(props.index)}>DESCRIPCION</button>
+        <button className={styles['btn-desc']} onClick={() => goToProduct(props.index)}>DESCRIPCION</button>
         {/* </Link> */}
         <div className={cx(globalStyles.div, styles['card-body'])}>
           <h5 className={cx(globalStyles['card-title'])}>{props.nombre_comida}</h5>
