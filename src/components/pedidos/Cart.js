@@ -19,9 +19,21 @@ function Cart(props) {
               <img src={logo} height={70} width={180} />
             </Link>
 
-            <div>
-              <Link to="/" className={cx(globalStyles["btn"], globalStyles['btn-outline-secondary'], styles['btn-go2'])}>HOME</Link>
-              <Link to="/store" className={cx(globalStyles["btn"], globalStyles['btn-outline-secondary'], styles['btn-go'])}>GO SHOPPING</Link>
+
+    return (
+        <React.Fragment>
+            <div className={cx(globalStyles['container-fluid'], styles['container'])}>
+
+                <div className={styles['div-title']}>
+                    <Link to="/">
+                        <img data-testid="ImageNav" src={logo} height={70} width={180} />
+                    </Link>
+                    <div>
+                        <Link to="/" className={cx(globalStyles["btn"], globalStyles['btn-outline-secondary'], styles['btn-go2'])}>HOME</Link>
+                        <Link to="/store" className={cx(globalStyles["btn"], globalStyles['btn-outline-secondary'], styles['btn-go'])}>GO SHOPPING</Link>
+                    </div>
+                </div>
+
             </div>
           </div>
 

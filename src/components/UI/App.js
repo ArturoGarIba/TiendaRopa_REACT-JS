@@ -18,13 +18,9 @@ import useHttp from '../hooks/hook';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  let [cantidad, setCantidad] = useState(0);
-  // const agregarCarrito = (event) => {
-  //   setCantidad((prevState) => cantidad += parseInt(event))
-  // }
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  
+
   const [producto, setProducto] = useState([]);
   const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
   const { isLoading, error, request } = useHttp();
