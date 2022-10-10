@@ -5,6 +5,7 @@ import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
 import ReactDOM from "react-dom";
+import App from '../UI/App'
 
 
 
@@ -14,7 +15,7 @@ jest.mock("react-router-dom", () => ({
 	useNavigate: jest.fn(),
 }));
 
-describe("Producto", () => {
+describe("App", () => {
 	let dispatch;
 	let container;
 
@@ -39,11 +40,7 @@ describe("Producto", () => {
 
 		const rendered = await act(async () =>
 			render(
-				<StateContext.Provider value={{ dispatch, state: {} }}>
-					<MemoryRouter initialEntries={['/some-route']}>
-						<Producto />
-					</MemoryRouter>
-				</StateContext.Provider>
+						<App />	
 			)
 		);
 
@@ -55,14 +52,7 @@ describe("Producto", () => {
 		expect(Container).toBeInTheDocument;
 	});
 
-
-	it("Should display clothes", async () => {
-		const nombre_comida = await screen.findByText("Men Sweatshirts");
-		const descripcion = await screen.findByText("Men Thermal Lined Sweatshirt");
-
-		expect(nombre_comida).toBeInTheDocument;
-		expect(descripcion).toBeInTheDocument;
-	});
+    
 
 });
  

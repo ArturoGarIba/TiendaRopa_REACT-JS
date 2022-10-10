@@ -8,10 +8,11 @@ import useHttp from "../components/hooks/hook";
 
 function Productos() {
 	const [producto, setProducto] = useState([]);
-    const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
+    
     const {isLoading, error, request} = useHttp();
 
     useEffect(() => {
+      const BASE_URL = "https://ropa-http-default-rtdb.firebaseio.com/";
       const fetchUser = async () => {
         //const userId = localStorage.getItem("userId");
         const url = `${BASE_URL}/productos.json?orderBy="$key"`;
