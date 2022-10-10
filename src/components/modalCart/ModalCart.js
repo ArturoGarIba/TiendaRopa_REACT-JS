@@ -83,7 +83,7 @@ function ModalCart(props) {
                     <article>
                       <h2>{cartItem.meal.nombre_comida}</h2>
                       <div>
-                        <h3>$ {cartItem.meal.precio} <font size="2">MXN</font></h3>
+                        <h3>$ {cartItem.meal.precio * cartItem.quantity} <font size="2">MXN</font></h3>
                       </div>
                     </article>
 
