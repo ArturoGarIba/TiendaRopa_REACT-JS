@@ -3,6 +3,13 @@ import cx from 'classnames';
 import globalStyles from '../../assets/global-styles/bootstrap.min.module.css';
 import React, { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
+import img1 from '../../img/187.jpg'
+import info1 from '../../img/info1.gif'
+import info2 from '../../img/info2.gif'
+import info3 from '../../img/info3.webp'
+import ropa1 from '../../img/ropa1.jpg'
+import ropa2 from '../../img/ropa2.jpg'
+import ropa3 from '../../img/ropa3.jpg'
 // import ModalContext from '../context/ModalContext';
 //import ModalCart from '../modalCart/ModalCart'
 function InicioView() {
@@ -24,7 +31,7 @@ function InicioView() {
                         In HEIN we are committed to offer our clients the best products in clothing wih the highest standards of quality at a reasonable price.
                         We hope you can enjoy the experience of buying in our new web page.
                     </p>
-                    <Link to="/store" className="btn btn-outline-dark d-grid gap-2 btn-lg">GO SHOPPING</Link>
+                    <Link to="/store" className={cx(globalStyles['btn'], styles['btn-dark'])}>GO SHOPPING</Link>
                     {/* <p className={styles['p-somos']}>
                         Fashion is the armor to survive the reality of everyday life.
                     </p>
@@ -34,6 +41,45 @@ function InicioView() {
                 </div>
             </div>
             <div className={styles['container-somos']}>
+            </div>
+
+            <div className={globalStyles['container']}>
+                <div className={globalStyles['row']}>
+                    <div className={cx(globalStyles['col-md-4'], globalStyles['p-0'])}>
+                        <img src={info1} className={styles['img-1']}></img>
+                    </div>
+                    <div className={cx(globalStyles['col-md-4'], globalStyles['p-0'])}>
+                        <img src={info2} className={styles['img-1']}></img>
+                    </div>
+                    <div className={cx(globalStyles['col-md-4'], globalStyles['p-0'])}>
+                        <img src={info3} className={styles['img-1']}></img>
+                    </div>
+                </div>
+                <div className={globalStyles['row']}>
+                    <div className={cx(globalStyles['col-lg-12'], styles['bg-gray'], globalStyles['p-0'])}>
+                        <img src={img1} className={styles['img-1']}></img>
+                    </div>
+                </div>
+
+                <div className={cx(globalStyles['container'], globalStyles['mt-3'], globalStyles['p-0'], globalStyles['text-center'])}>
+                    <p className={styles['p-subtitle']}>
+                        LA MEJOR CALIDAD Y DISENO LA ENCONTRARAS AQUI
+                    </p>
+                    <div className={cx(globalStyles['row'])}>
+
+                        <div class={cx(globalStyles['col-md-4'], globalStyles['p-0'])} >
+                            <img src={ropa1} className={cx(styles['img-1'])}></img>
+                        </div>
+                        <div class="col-md-4">
+                            <img src={ropa2} className={styles['img-1']}></img>
+                        </div>
+                        <div class="col-md-4">
+                            <img src={ropa3} className={styles['img-1']}></img>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </React.Fragment>
     );
