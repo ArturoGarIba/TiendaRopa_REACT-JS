@@ -7,11 +7,16 @@
     width: 20%;
     filter: blur(5);
     height: fit-content;
+    /* margin-left: auto; */
 }
 
-.btn-go{
+.btn-go, .btn-go2{
     color: white;
+    height: fit-content;
+    margin-left: auto;
 }
+
+.btn-go2{margin-right: 10px;}
 
 .div-title {
     width: 80%;
@@ -19,6 +24,9 @@
     color: white;
     font-size: 2em;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container {
@@ -27,6 +35,8 @@
     padding: 15px;
     align-items: center;
     max-width: 100% !important;
+    display: flex;
+    flex-flow: row;
 }
 
 .svg {
@@ -129,3 +139,5 @@
         height: 100px;
     }
 }
+
+

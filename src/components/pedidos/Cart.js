@@ -8,6 +8,7 @@ import logo from "../../img/logo2.png";
 import { Link } from "react-router-dom";
 
 function Cart(props) {
+
   return (
     <React.Fragment>
       <div className={cx(globalStyles["d-flex"], styles["container"])}>
@@ -35,6 +36,7 @@ function Cart(props) {
 
     </React.Fragment>
   );
+
 }
 
 export default Cart;

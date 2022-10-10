@@ -7,7 +7,18 @@
     width: 20%;
     filter: blur(5);
     height: fit-content;
-    text-decoration: none;
+    text-decoration: none; 
+}
+
+.btn-dark{
+    background: black;
+    color: white;
+    margin: 0 auto;
+    width: 30%;
+}
+
+.btn-dark:hover{
+    background: rgb(48, 48, 48);
 }
 .div-title {
     width: 80%;
@@ -41,6 +52,7 @@
     margin: 0 auto;
     padding: 15px;
     height: fit-content;
+    text-align: center;
 }
 .relative{
     position: relative;
@@ -79,6 +91,31 @@
     /* width: ; */
     padding: 15px;
 }
+
+
+.bg-gray{
+    background-position: center;
+	background-attachment: contain;
+	background-size: cover;
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+.img-1{
+    /* background-image: url(../../img/187.jpg); */
+    /* background-size: cover; */
+    width: 100%;
+    /* height: fit-content; */
+
+}
+
+.p-subtitle{
+    font-size: 1.7em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
 @media (max-width: 550px) {
     .div-title {
         font-size: 1em;
