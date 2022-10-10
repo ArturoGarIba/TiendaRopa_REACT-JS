@@ -7,7 +7,7 @@ import globalStyles from "../assets/global-styles/bootstrap.min.module.css";
 import useHttp from "../components/hooks/hook";
 
 function Productos() {
-  
+
   const loadingMessage = <h2>Loading...</h2>;
 
   return (

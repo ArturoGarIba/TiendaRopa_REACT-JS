@@ -69,7 +69,7 @@ function InicioView() {
                     </p>
                     <div className={cx(globalStyles['row'])}>
 
-                        <div class={cx(globalStyles['col-md-4'], globalStyles['p-0'])} >
+                        <div class={cx(globalStyles['col-md-4'])} >
                             <img src={ropa1} className={cx(styles['img-1'])}></img>
                         </div>
                         <div class="col-md-4">
