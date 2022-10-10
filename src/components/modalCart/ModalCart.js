@@ -103,7 +103,7 @@ function ModalCart(props) {
                                 </Button>
                               </td>
                               <td className={styles["cell-border"]}>
-                                <h4> {cartItem.quantity}</h4>
+                                <h4>{cartItem.quantity}</h4>
                               </td>
                               <td>
                                 <Button
