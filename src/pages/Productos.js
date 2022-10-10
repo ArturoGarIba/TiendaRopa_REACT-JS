@@ -26,7 +26,7 @@ function Productos() {
       
     }, [request]);
 
-    const loadingMessage = <h2>Cargando...</h2>;
+    const loadingMessage = <h2>  Loading...</h2>;
     const errorMessage = <h2>{error}</h2>;
 
       return (

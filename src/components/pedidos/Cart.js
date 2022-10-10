@@ -16,7 +16,7 @@ function Cart(props) {
             <div className={cx(globalStyles.div, globalStyles['d-flex'], styles['container'])}>
                 <div className={styles['div-title']}>
                     <Link to="/">
-                        <img src={logo} height={70} width={180} />
+                        <img src={logo} height={70} width={180}  data-testid="ImageNav"/>
                     </Link>
                     
                 </div>
